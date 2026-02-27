@@ -1,0 +1,255 @@
+
+*********************************************
+Exemples de quatre fonctions élémentaires dans R
+ Chargement du fichier compressé [dossier: "ADT_R"] des codes source et des données
+
+Le logiciel R est à la fois un langage et une bibliothèque. Comme Python, il s’agit d’un logiciel gratuit et multiplateforme. C’est la composante non exclusive du langage de programmation S (Chambers, 1998), elle-même dérivée des travaux d’une équipe de Bell Laboratories datant de 1976 (équipe composée de Rick Becker, John Chambers, Doug Dunn, Paul Tukey et Graham Wilkinson).
+
+1- Compression et reconstruction d'images (avec affichage graphique)
+2- Analyse en composantes principales (avec affichage graphique)
+3- Analyse de correspondance (avec affichage graphique)
+4- Calcul et tracé (sur un plan principal) de l'arbre couvrant minimal
+
+ Haut
+
+1- Compression et reconstruction d'images (avec affichage graphique)
+C’est simplement pour pénétrer, grâce à R, dans la boîte noire d’une fonctionnalité banale disponible dans la plupart des logiciels statistiques d’analyse d’images.
+
+De toute évidence, le code pourrait être beaucoup plus compact, mais peut-être moins lisible.
+Commandes pour l'interface R
+
+ # -------------------------------------
+source ("c: \\ ADT_R \\ svd_image_E.r") # code source
+path = "c: \\ ADT_R \\ Cheetah.txt" # data
+X = read.table (chemin, en-tête = FALSE, row.names = 1, sep = "")
+nd = 8 # nombre d'axes pour la reconstitution (par exemple)
+Y = recons (X, nd)
+visu_image (Y)
+# -------------------------------------
+***************************************************************
+Le petit fichier de test de données «Cheetah.txt» est fourni dans le dossier ADT_R. C'est un tableau numérique simple (200 x 320) [niveaux de gris pour chaque pixel]. Voir: Nelson M. (1993). La compression des données. Texte, images, fils. Dunod, Paris.
+
+Cas d'une image plus générale au format ".pgm" (Portable Grey Map)
+Le fichier "Cheetah.txt" dans cet exemple est une matrice simple, plus rustique que les formats d'image les plus courants (bmp, jpg, png).
+Ces images doivent être converties au format pgm par un logiciel libre tel que GIMP ou IrfanView. La matrice X de lignes de commande est ensuite obtenue à l'aide des quatre lignes de commande suivantes:
+*********************************************
+
+#-------------------------------------
+# Four command lines to substitute to the line:
+# "X = read.table ..." in the case of an image in pgm format
+#-------------------------------------
+install.packages ( "pixmap"); # to use only the first time ...
+library (pixmap); # Loading the "pixmap package"
+imag = read.pnm (""c:\\ADT_R\\Cheetah.pgm"); # for a "pgm" image
+X = 255 * imag @ gray; # We can now call the function recons ()
+#-------------------------------------
+The image below is the image produced by the function recon():
+************************************************************************
+
+A2- Analyse en composantes principales (avec affichage graphique)
+Il s’agit simplement d’obtenir, grâce à R, une fonctionnalité disponible dans la plupart des logiciels statistiques d’analyse exploratoire multivariée.
+
+Encore une fois, le code pourrait être beaucoup plus compact, mais peut-être moins lisible.
+Commandes pour l'interface R
+
+ # -------------------------------------
+# Commandes à saisir dans l’interface R.
+source ("c: /ADT_R/ACPS_E.r") # emplacement du code source
+path = "c: /ADT_R/Mini_Semio.txt" # emplacement des données
+X = read.table (chemin, en-tête = VRAI, row.names = 1, sep = ",") # X = table de données
+Y = fonction principale ACP (X) #
+plot_ind (Y, X, hor = 2, ver = 3, font = 1) # graphe d'individus (lignes)
+                                         # (avion (2, 3))
+plot_var (Y, X, hor = 2, ver = 3, police = 1) # graphe de variables (colonnes)
+                                         # (avion (2, 3))
+# ------------------------------------------------- -
+
+Le petit fichier de test de données «Mini_semio.txt» est fourni dans le dossier ADT_R. Il s’agit d’un simple tableau numérique (12 x 7) donnant les scores attribués par 12 répondants à un ensemble de 7 mots. La liste sémiométrique réelle contient 210 mots et la taille des échantillons varie de 800 à plusieurs milliers. Voir: Le défi semiométrique: mots, modes de vie et valeurs (L. Lebart, JF. Steiner, M. Piron, J. Wisdom), L2C, 2014. (Téléchargez le livre - pdf) (Téléchargez la couverture du livre - pdf) .. La sémiométrie (L. Lebart, M. Piron, J.-F. Steiner), Dunod, 2003. (Télécharger le livre - pdf)
+*************************************************************************
+
+3- Analyse de correspondance (avec affichage graphique)
+Il s'agit d'un code simple et autonome pour l'analyse des correspondances, comprenant une représentation simultanée de lignes et de colonnes.
+
+Encore une fois, le code pourrait être beaucoup plus compact, mais peut-être moins lisible.
+Commandes pour l'interface R
+
+ # -------------------------------------
+# Commandes à saisir dans l’interface R.
+
+# ------------------------------------------------- ---------------------
+# fonction Y = afcor (X): Analyse de correspondance de la matrice X
+# ------------------------------------------------- ---------------------
+# Exemple pour une table de contingence "tab.csv" dans le dossier ADT_R
+# (le code source: - afcor_E.r - se trouvant dans le même dossier)
+ source ("c: /ADT_R/afcor_E.r") # emplacement du code source
+ path = "c: /ADT_R/tab.csv" # emplacement des données
+# chemin mène à un fichier Excel (c) [format csv]
+ X = read.csv (path, row.names = 1, sep = ";") # X = table de données
+ Y = afcor (X)
+ plot_simult (Y) # tracé simultané de lignes et de colonnes de la table de données
+# ------------------------------------------------- ---------------------
+Le petit fichier de test de données «tab.csv» est fourni dans le dossier ADT_R. C'est un tableau lexical simple (12 x 6) donnant les fréquences de 12 mots (lignes) dans les réponses de six catégories de répondants. à la question suivante dans une enquête par sondage:
+«Personne ne peut expliquer pourquoi, peut-être à cause de ce qu'ils évoquent, nous trouvons certains mots agréables, d'autres désagréables.
+1. En ce qui vous concerne personnellement, quels sont les mots que vous trouvez les plus agréables? (Citez autant de mots que possible).
+2. Quels sont les mots que vous trouvez les plus désagréables? (Citez autant de mots que possible). "
+
+C'est un cas de "sémiométrie ouverte" (sans liste de mots fermée), cf. Chapitre 4 du livre déjà cité: Le défi semiométrique: mots, modes de vie et valeurs (L. Lebart, JF. Steiner, M. Piron, J. Wisdom), L2C, 2014. (Téléchargez le livre - pdf) (Téléchargez le livre couverture - pdf) ... et La sémiométrie (L. Lebart, M. Piron, J.-F. Steiner), Dunod, 2003. (Télécharger le livre - pdf)
+
+ 
+
+Petit tableau de données de test ("tab.csv")
+**********************************************************
+
+A4- Calcul et tracé (sur un plan principal) de l'arbre couvrant minimal
+Le langage de base R est à nouveau utilisé volontairement sans aucune bibliothèque spécialisée. Un choix devait être fait entre les nombreuses méthodes de clustering. Nous avons choisi d'implémenter ici l'arbre de recouvrement minimum (fonction armin) en utilisant l'algorithme Prim. Les fonctions print_armin et plot_armin donnent respectivement la liste des arêtes de l'arbre et une représentation de celle-ci dans un plan principal. L'arbre est calculé ici à partir des coordonnées principales résultant d'une analyse de correspondance (fonction afcor dans la section A3 ci-dessus). Avec ces coordonnées, la distance euclidienne habituelle correspond à la distance Chi-2 des données initiales.
+Enfin, une petite fonction afcor_armin_plot (voir la fin du listing) fournit la séquence souhaitée. Il est inclus dans le fichier armin.r, lui-même inclus dans le dossier intitulé ADT_R. Pour obtenir les résultats souhaités, écrivez simplement les lignes suivantes:
+
+Commandes pour l'interface R
+
+ # -------------------------------------
+# Commandes à saisir dans l’interface R.
+
+# ------------------------------------------------- ---------------------
+# fonction composite Y = afcor_armin_plot (X) [dans le dossier téléchargé ADT_R]
+# ------------------------------------------------- ---------------------
+# Exemple pour une table de contingence "tab.csv" dans le dossier ADT_R
+# (les codes sources: afcor_E.r et armin_R.r se trouvant dans le même dossier ADR_r)
+ source ("c: /ADT_R/afcor_E.r") # emplacement du code source 1
+ source ("c: /ADT_R/armin_E.r")) # emplacement du code source 2
+ path = "c: /ADT_R/tab.csv" # emplacement des données
+# mêmes données que dans la section A3
+  afcor_armin_plot (chemin)
+# ------------------------------------------------- ---------------------
+Le tableau ci-dessous est produit par la fonction afcor_armin_plot ():
+
+Tableau des sommets obtenus après la saisie des quatre lignes de commande R ci-dessus.
+
+
+*********************************************************************************************************
+
+Ejemplos de cuatro funciones básicas en R
+ Cargando el archivo comprimido [carpeta: "ADT_R"] datos y códigos fuente
+
+El software R es tanto un lenguaje como una biblioteca. Al igual que Python, es un software gratuito y multiplataforma. Es el componente no exclusivo del lenguaje de programación S (Chambers, 1998), derivado del trabajo de un equipo de Bell Laboratories de 1976 (equipo compuesto por Rick Becker, John Chambers, Doug Dunn, Paul Tukey y Graham Wilkinson).
+
+1- Compresión y reconstrucción de imágenes (con visualización gráfica).
+2- Análisis de componentes principales (con visualización gráfica)
+3- Análisis de correspondencia (con visualización gráfica).
+4- Cálculo y trazado (en un plano principal) del árbol de expansión mínimo
+
+ superior
+
+1- Compresión y reconstrucción de imágenes (con visualización gráfica).
+Es simplemente penetrar, gracias a R, en la caja negra de una funcionalidad común disponible en la mayoría de los programas estadísticos de análisis de imágenes.
+
+Obviamente, el código podría ser mucho más compacto, pero quizás menos legible.
+Comandos para la interfaz R
+
+ # -------------------------------------
+código fuente ("c: \\ ADT_R \\ svd_image_E.r") #
+ruta = "c: \\ ADT_R \\ Cheetah.txt" # datos
+X = read.table (ruta, encabezado = FALSE, row.names = 1, sep = "")
+nd = 8 # número de ejes para reconstitución (por ejemplo)
+Y = recons (X, nd)
+visu_image (Y)
+# -------------------------------------
+**********************************************************************
+El archivo de prueba de datos pequeños "Cheetah.txt" se proporciona en la carpeta ADT_R. Es una tabla digital simple (200 x 320) [escala de grises para cada píxel]. Ver: Nelson M. (1993). Compresión de datos. Texto, imágenes, hijo. Dunod, París.
+
+Caso de una imagen más general en formato ".pgm" (Mapa Gris Portátil)
+El archivo "Cheetah.txt" en este ejemplo es una matriz simple, más rústica que los formatos de imagen más comunes (bmp, jpg, png).
+Estas imágenes deben convertirse a formato pgm mediante software libre como GIMP o IrfanView. La matriz X de las líneas de comando se obtiene utilizando las siguientes cuatro líneas de comando:
+*********************************************
+
+# -------------------------------------
+# Cuatro líneas de comando para reemplazar la línea:
+# "X = read.table ..." en el cuadro de una imagen en formato pgm
+# -------------------------------------
+install.packages ("pixmap"); # para usar solo la primera vez ...
+biblioteca (pixmap); # Cargando el "paquete de pixmap"
+imag = read.pnm ("" c: \\ ADT_R \\ Cheetah.pgm "); # para una imagen" pgm "
+X = 255 * imag @ gris; # Ahora podemos llamar a la función recons ()
+# -------------------------------------
+La imagen de abajo es la imagen producida por la función recon ():
+******************************************************************
+
+A2- Análisis de componentes principales (con visualización gráfica)
+Es simplemente una cuestión de obtener, gracias a R, una funcionalidad disponible en la mayoría del software estadístico de análisis exploratorio multivariado.
+
+Una vez más, el código podría ser mucho más compacto, pero quizás menos legible.
+Comandos para la interfaz R
+
+ # -------------------------------------
+# Comandos para entrar en la interfaz R.
+source ("c: /ADT_R/ACPS_E.r") # ubicación del código fuente
+ruta = "c: /ADT_R/Mini_Semio.txt" # ubicación de datos
+X = tabla de lectura (ruta, encabezado = VERDADERO, nombres de fila = 1, sep = ",") # X = tabla de datos
+Y = función principal ACP (X) #
+plot_ind (Y, X, hor = 2, gusano = 3, fuente = 1) # gráfico de individuos (líneas)
+                                         # (avión (2, 3))
+plot_var (Y, X, hor = 2, gusano = 3, fuente = 1) # gráfico variable (columnas)
+                                         # (avión (2, 3))
+# ------------------------------------------------- -
+
+El archivo de prueba de datos pequeños "Mini_semio.txt" se proporciona en la carpeta ADT_R. Esta es una tabla numérica simple (12 x 7) que proporciona las puntuaciones atribuidas por 12 encuestados a un conjunto de 7 palabras. La lista semiótica real contiene 210 palabras y el tamaño de la muestra varía de 800 a varios miles. Ver: El desafío semiométrico: palabras, estilos de vida y valores (L. Lebart, JF Steiner, M. Piron, J. Wisdom), L2C, 2014. (Descargar el libro - pdf) (Descargar la portada del libro - pdf Semiometría (L. Lebart, M. Piron, J.-F. Steiner), Dunod, 2003. (Descargar el libro - pdf)
+****************************************************
+
+
+3- Análisis de correspondencia (con visualización gráfica).
+Es un código simple y autónomo para el análisis de correspondencia, que incluye una representación simultánea de filas y columnas.
+
+Una vez más, el código podría ser mucho más compacto, pero quizás menos legible.
+Comandos para la interfaz R
+
+ # -------------------------------------
+# Comandos para entrar en la interfaz R.
+
+# ------------------------------------------------- ---------------------
+# función Y = afcor (X): Matrix X análisis de correspondencia
+# ------------------------------------------------- ---------------------
+# Ejemplo para una tabla de contingencia "tab.csv" en la carpeta ADT_R
+# (el código fuente: - afcor_E.r - encontrado en la misma carpeta)
+ source ("c: /ADT_R/afcor_E.r") # ubicación del código fuente
+ path = "c: /ADT_R/tab.csv" # ubicación de datos
+# ruta lleva a un archivo de Excel (c) [formato csv]
+ X = read.csv (ruta, row.names = 1, sep = ";") # X = tabla de datos
+ Y = afcor (X)
+ plot_simult (Y) # dibujo simultáneo de filas y columnas de la tabla de datos
+# ------------------------------------------------- ---------------------
+El archivo de prueba de datos pequeños "tab.csv" se proporciona en la carpeta ADT_R. Es un gráfico léxico simple (12 x 6) que da las frecuencias de 12 palabras (líneas) en las respuestas de seis categorías de encuestados. a la siguiente pregunta en una encuesta de muestra:
+"Nadie puede explicar por qué, tal vez por lo que evocan, encontramos algunas palabras agradables, otras desagradables.
+1. En lo que a usted respecta, ¿qué palabras le gustan más? (Cita tantas palabras como sea posible).
+2. ¿Qué palabras encuentras las más desagradables? (Cita tantas palabras como sea posible). "
+
+Este es un caso de "semieometría abierta" (sin lista de palabras cerradas), cf. Capítulo 4 del libro ya citado: El desafío semiométrico: palabras, estilos de vida y valores (L. Lebart, JF Steiner, M. Piron, J. Wisdom), L2C, 2014. (Descargue el libro - pdf) (Descargue el libro de tapa - pdf) ... y semiometría (L. Lebart, M. Piron, J.-F. Steiner), Dunod, 2003. (Descargar el libro - pdf)
+
+ 
+
+Pequeña tabla de datos de prueba ("tab.csv")
+
+**************************************************************************************
+
+A4- Cálculo y trazado (en un plano principal) del árbol de expansión mínimo
+El lenguaje básico R se usa de nuevo voluntariamente sin ninguna biblioteca especializada. Había que elegir entre los muchos métodos de agrupación. Hemos elegido implementar el árbol de superposición mínimo (función armin) utilizando el algoritmo Prim. Las funciones print_armin y plot_armin dan respectivamente la lista de los bordes del árbol y una representación de ella en un plano principal. El árbol se calcula aquí a partir de las coordenadas principales resultantes de un análisis de correspondencia (función posterior en la sección A3 anterior). Con estas coordenadas, la distancia euclidiana habitual corresponde a la distancia Chi-2 de los datos iniciales.
+Finalmente, una pequeña función afcor_armin_plot (ver el final de la lista) proporciona la secuencia deseada. Se incluye en el archivo armin.r, incluido en la carpeta titulada ADT_R. Para obtener los resultados deseados, simplemente escriba las siguientes líneas:
+
+Comandos para la interfaz R
+
+# -------------------------------------
+# Comandos para entrar en la interfaz R.
+
+# ------------------------------------------------- ---------------------
+# función compuesta Y = afcor_armin_plot (X) [en la carpeta descargada ADT_R]
+# ------------------------------------------------- ---------------------
+# Ejemplo para una tabla de contingencia "tab.csv" en la carpeta ADT_R
+# (los códigos fuente: afcor_E.r y armin_R.r están en la misma carpeta ADR_r)
+ source ("c: /ADT_R/afcor_E.r") # ubicación del código fuente 1
+ source ("c: /ADT_R/armin_E.r")) # ubicación del código fuente 2
+ path = "c: /ADT_R/tab.csv" # ubicación de datos
+# los mismos datos que en la sección A3
+  afcor_armin_plot (ruta)
+# ------------------------------------------------- ---------------------
+La siguiente tabla es producida por la función afcor_armin_plot ():
+
+Tabla de vértices obtenida después de ingresar las cuatro líneas de comando R arriba.
+**************************************************

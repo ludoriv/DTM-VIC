@@ -1,0 +1,120 @@
+/* Feuille de style */
+
+/* Styles body, a */
+
+body
+{
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #303D58;
+
+	font-family: Arial, "Times New Roman", Times, sans-serif;
+}
+
+a
+{
+	color: #643232;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover
+{
+    color: #970036;
+    text-decoration: underline;
+}
+
+
+/* Styles de l'en-tête */
+#en_tete
+{
+    height: 116px;
+	margin-top: 0px;
+	border: 2px dotted #3333FF;	
+    background:#DDDDDD;
+    font-size: 10px;
+}
+
+/* Styles des menus */
+
+#menu
+{
+	width: 20%;
+	float: left;
+	font-size: 14px;
+}
+
+.sous_menu
+{
+	margin-top: 20px;
+	margin-left: 10px;
+
+	background-color: rgb(210,255,210);
+        color: #643232;
+	border: 2px dotted #3333FF;	
+}
+
+.sous_menu h3
+{
+		color: #003300; 
+	text-align: center;
+}
+
+
+/* Styles du corps */
+
+#corps
+{
+	margin-left: 22%;
+	margin-top: 20px;
+	padding: 10px;	
+	border: 2px dotted #3333FF;	
+	color: #000000;
+	background-color: rgb(210,255,210);
+   /* background-color: #CCFFFF; */	
+	text-align: justify;
+    font-size: 14px;
+}
+
+#corps h2
+{
+	text-align: center;
+color: rgb(100,50,50); 
+}
+#corps h3
+{
+color: rgb(100,50,50); 
+}
+
+.publi_art
+{
+    font-size: 12px;
+}
+
+.publi_art a
+{
+	color: #000066; 
+    text-decoration: none;
+    font-weight: bold;
+}
+.publi_art a:hover
+{
+	color: #970036;
+    text-decoration: underline;
+}
+
+/* Styles du pied de page */
+
+#pied_de_page
+{
+	clear: left;
+	margin-top: 30px;
+	padding: 5px;
+	font-style: italic;
+	background-color: #DDDDDD;	
+	color: #000000;
+	text-align: center;
+	border: 2px dotted #3333FF;	
+
+}

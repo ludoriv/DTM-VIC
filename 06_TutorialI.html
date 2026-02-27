@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0BKW2ZEJ8G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0BKW2ZEJ8G');
+</script>	
+		<title> Dtm-Vic / Lebart </title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" media="screen" type="text/css" title="Download" href="fichiers/download.css">
+
+<meta name="keywords"
+          lang="it"
+          content=
+       "l'analisi dei dati, statistiche testuale, di analisi multidimensionali dei testi, 
+          quantitativi linguistica, linguistica computazionale, l'analisi statistica multivariata 
+          descrittivo, contiguità analisi, analisi delle corrispondenze, software statistici, 
+          tecniche di rilevamento, la classificazione, il clustering, l'analisi delle corrispondenze 
+          multiple, Self Organizing Maps, Kohonen, Bootstrap, convalida, la valutazione, la 
+          metodologia di indagine, dtmvic, Lebart">
+
+	</head>
+    <body>
+<!-- ========================================================-->		
+		<div id="corps">
+    
+    <a href="01_mainI.html"><b>Torna alla pagina principale</b> </a>
+    
+        <h1>Tutorial per DtmVic</h1>
+        
+<h3 align="center">
+         <a href=
+             "doc/Tutorial.pdf"><img border="0"
+             width="13"
+             height="15"
+             id="tutoriel"
+             src="image/pdf.gif">(Scaricare el Tutorial en pdf format)</a></h3>
+             
+              
+        <h3>(Il software DtmVic deve essere scaricato in precedenza, 
+dato che il tutorial si avvale degli insiemi di dati ad esempio)</h3>
+
+            <hr size="2"
+                width="100%"
+                align="center">
+
+        <h2>Tutorial A: Una introduzione a DtmVic </h2>
+<div class="center">        
+        
+        <B>Sei esempi elementari di scoprire DtmVic  </B>
+
+</div>
+				<ul>
+					<li>A1- <b>Analisi delle Componenti Principali (PCA) </b><br />
+Attiva e complementare variabili. Complementare categorie. Bootstrap convalida. 
+      PCA &egrave; seguita da un raggruppamento di osservazioni, e una descrizione dei cluster ottenuti.</li><br />
+					<li>A2- <b>Analisi delle Corrispondenze (CA).</b><br />
+Analisi delle corrispondenze di una piccola tabella di contingenza. Bootstrap convalida.</li><br />
+					<li>A3- <b>Analisi delle Corrispondenze Multiple (MCA).</b><br />
+Attiva e complementare categorie. Bootstrap convalida. 
+      MCA &egrave; seguita da un raggruppamento di osservazioni, e una descrizione dei cluster ottenuti.
+</li><br />
+					<li>A4- <b>Analisi delle Corrispondenze di una tabella lessicale.</b><br />
+L'elaborazione di una semplice serie di testi (20 prima Sonetti shakespeariani). 
+      Codificazione numerica. Analisi delle Corrispondenze delle tabella "parole x poesie". 
+      Bootstrap convalida. Caratteristica parole e versi. Mappe de Kohonen. Seriazione.</li><br />
+					<li>A5- <b>Domande aperte in un sondaggio campione.</b><br />
+Utilizzando i dati sia numerici e testuali. L'elaborazione delle risposte 
+      ad una domanda aperta con una specifica variabile categoriale. 
+      Codificazione numerica delle risposte. Analisi delle Corrispondenze delle 
+      parole lessicali tabella x categorie. Bootstrap convalida. 
+      Descrizione delle categorie attraverso le loro parole caratteristiche e le risposte. 
+      Mappa Kohonen simultanea per le parole e le categorie.
+      
+      					<li>A6- <b>domande aperte in un sondaggio: link con chiusi domande</b><br />
+Questo esempio prende in considerazione le informazioni sulle domande chiuse. 
+Codificazione numerica delle risposte. CA delle parole lessicali tabella intervistati x parole.
+Questo esempio prende in considerazione le informazioni sulle domande chiuse.  Clustering delle risposte, 
+       e una descrizione dei clusters ottenuti attraverso le loro parole caratteristici, 
+       le risposte, e anche attraverso le rispettive categorie caratteristica (domande chiuse). 
+       Mappe de Kohonen per le parole e per i rispondenti.</li><br />
+
+</li>
+				</ul>
+       
+
+            <hr size="2"
+                width="100%"
+                align="center">
+        
+
+         <h2>Tutorial B: DtmVic e testuali dati</h2> 
+<div class="center">         
+         
+        <B> Tre esempi pi&ugrave; per praticare DtmVic con i dati testuali </B>
+</div>
+             <br /><br />
+
+      
+A differenza Tutorial A, i seguenti esempi uso esistenti file di comando (o: file di parametri). 
+Ogni esempio corrisponde ad una directory inclusa nella directory "DtmVic-Examples_B_Texts" 
+che &egrave; stato scaricato con DtmVic.
+
+	<ul>
+					<li>B1- <b>Domande aperte in un'indagine a campione: prima esplorazione </b><br />
+       Codificazione numerica delle risposte. Esempi di modifiche della soglia di frequenza per le parole. 
+       Esempio di concordanze (contesto sintattico) per alcune parole. Analisi delle Corrispondenze (CA), 
+      della tabella lessicale intervistati x parole. Clustering delle intervistati, e una descrizione 
+      dei clusters ottenuti attraverso le loro parole caratteristiche e le risposte. 
+      Mappa de Kohonen per le parole e per i rispondenti.                    </li><br />
+					<li>B2- <b>Domande aperte e MCA in un sondaggio campione</b><br />
+
+Analisi delle corrispondenze multiple e clustering degli intervistati con domande chiuse. 
+      Trasformazione aggregati [e lemmatised] risposte a domande aperte. 
+      L'esempio propone un'altra tecnica per il raggruppamento e l'elaborazione delle
+      risposte ad aprire questione in una indagine campionaria. In una prima fase, 
+      una analisi delle corrispondenze multiple &egrave; effettuata su un insieme selezionato
+      di variabili categoriali (cio&egrave;: le risposte alle domande chiuse-end). 
+      Il principale asse di visualizzazione &egrave; completata da un clustering, 
+      seguita da una descrizione automatica dei cluster. 
+      Questi cluster vengono poi utilizzati per aggregare le risposte a una questione aperta.
+</li><br />
+					<li>B3- <b>Visualizzazione della rete semantica dei verbi francesi</b><br />
+Visualizzazione delle connessioni semantiche esistenti tra i 829 verbi francesi. 
+      Ogni verbo &egrave; descritto da una lista di "sinonimi".
+</li><br />
+				</ul>
+
+            <hr size="2"
+                width="100%"
+                align="center">
+        
+        <h2>Tutorial C :&nbsp;DtmVic con i dati numerici
+ </h2>
+<div class="center">   
+        <B>DtmVic con i dati numerici: 
+        Semiometry, Dati "Iris di Fisher", Grafi, Immagini.</B>
+        
+</div>
+		<ul>
+			<li>C1- <b>Visualization in Analisi delle Componenti Principali</b><br />
+      Esempio C1 utilizza un estratto dei dati semiometric. 
+      Il principale asse di visualizzazione &egrave; completato da un raggruppamento, 
+      con una descrizione automatica dei cluster. Bootstrap procedure, 
+      mappe di Kohonen sono seguiti da vari strumenti di visualizzazione 
+      fornite nel sub-menu "Visualization" della fase di "VIC": visualizzazione 
+      di cluster (o categorie) con simboli o colori, gli scafi convessa o ellissi 
+      di densit&agrave; per i cluster, Minimum Spanning Tree, disegno di vari grafi 
+      pi&ugrave; vicini prossimi. <br /><br />
+					<li>C2- <b>PCA e contiguit&agrave; analisi sui dati di Fisher Iris</b><br />
+      Esempio C2 si propone di analizzare una serie classica di variabili numeriche
+       (I dati Iris insieme di Anderson / Fisher) tramite Analisi delle Componenti 
+       Principali, classificazione, contiguit&agrave; Analisi, Analisi Discriminante. 
+       Il principale asse di visualizzazione &egrave; completata da un raggruppamento 
+       tra cui uno automatico per la descrizione dei cluster. In via preliminare, 
+       esempio C2 &egrave; molto simile al esempio A1: analisi dei componenti principali 
+       e classificazione (clustering) di una serie di dati numerici, con vari strumenti 
+       di visualizzazione, coinvolgendo anche i dati specifici categorico. Si presenta 
+       quindi i miglioramenti apportati per contiguit&agrave; e di analisi e un caso particolare pi&ugrave; 
+       classico di contiguit&agrave; Analisi: Analisi Discriminante Lineare.
+</li><br />
+					<li>C3- <b>Descrizione dei grafi attraverso la Analisi delle corrispondenze</b><br />
+      Visualizzazione di una serie di semplici grafi planari, 
+      principalmente attraverso l'analisi delle corrispondenze. 
+      I tre grafi sono grafi planari: un grafo a forma di scacchiera, un ciclo, 
+      e due grafi empirici dovrebbero rappresentare circa le mappe delle regioni 
+      del Giappone e della Francia. Questi esempi forniscono un ponte tra le diverse 
+      sfaccettature di DtmVic: uno stesso grafo pu&ograve; portare a dati di input diversi: 
+      classico dati numerici, i dati testuali, e di uno specifico "modello esterno".
+</li><br />
+					<li>C4- <b>strutturali compressione delle immagini tramite SVD e CA</b><br />
+ Esempio C4 potrebbe essere visto come un appendice pedagogico. 
+      Ci mostrano come le due tecniche (<i>Singular Value Decomposition</i> e <i>Correspondence Analysis</i>) di contribuire alla compressione delle immagini.
+      Non fa uso di dati in formato DtmVic, dal momento che si tratta di 
+      immagini digitalizzate. Un semplice array rettangolare di 
+      numeri interi &egrave; sufficiente : non &egrave; necessario per gli identificatori di righe o colonne.
+       Si mostra come le immagini vengano progressivamente compresse e come vengono ricostituiti con SVD e CA.
+Il confronto &egrave; fatto con la serie di Fourier.
+      L'interfaccia specializzata &egrave; fornita tramite il pulsante "SVD and CA of Images"  
+      del menu principale.
+
+</li>
+				</ul>
+       
+
+            <hr size="2"
+                width="100%"
+                align="center">
+        
+        <h2>Tutorial D :&nbsp; L'importazione dei dati </h2>
+<div class="center">        
+        <B>Quattro esempi di dati per l'importazione per DtmVic </B><br /><br />
+        
+
+</div>
+ Il tutorial D inizia da descrivere i dati in formato interno per il software DtmVic.
+Si tratta di un formato specifico, ma non proprietario (testo: .txt). E trasparente per l'utente.
+Infine, vi presentiamo quattro tipi di importazioni i pi&ugrave; comuni.
+
+
+				<ul>
+				<li>D1- <b>Importazione di dati numerici e testuali da Excel &reg; file</b></li><br />
+				<li>D2- <b>Importazione di dati numerici da un file (formato fisso) </b></li><br />
+				<li>D3- <b>Importazione di dati testuale da un formato libero</b></li><br />
+				<li>D4- <b>Importazione di entrambi numerici e testuali dati da un formato di file XML</b></li><br />
+                    
+				</ul>     
+
+            <hr size="2"
+                width="100%"
+                align="center">
+        
+     <a href="01_mainI.html"><b>Torna alla pagina principale</b> </a>
+ </div> 
+</body>
+</html>

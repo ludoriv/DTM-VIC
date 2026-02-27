@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0BKW2ZEJ8G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0BKW2ZEJ8G');
+</script>	
+		<title> Dtm-Vic / Lebart </title>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<link rel="stylesheet" media="screen" type="text/css" title="Download" href="fichiers/download.css">
+
+    <meta name="keywords"
+          lang="fr"
+          content=
+          "Lebart Ludovic, Analyse de donn&eacute;s, statistique textuelle, 
+          contiguit&eacute;, analyse des correspondances, logiciels statistiques, 
+          m&eacute;thodologie d'enqu&ecirc;te, classification, bootstrap, 
+          Kohonen, lexicom&eacute;trie, textom&eacute;trie, dtm, dtmvic, dtm-vic">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Arial;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-autospace:ideograph-numeric;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.Niveau1, li.Niveau1, div.Niveau1
+	{mso-style-name:Niveau1;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-autospace:ideograph-numeric;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 70.85pt 70.85pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+	</head>
+    <body>
+<!-- ========================================================-->		
+		<div id="corps">
+    
+    <a href="01_mainF.html"><b>Accueil</b> </a>
+    
+        <h1>Manuel d'Utilisation de Dtm-Vic, troisi&egrave;me &eacute;dition, 2016</h1>
+
+        <h1 align="center">
+         <a href=
+             "doc/DTM_Manuel_complet_2016.pdf"><img border="0"
+             width="13"
+             height="15"
+             id="tutoriel"
+             src="image/pdf.gif">(T&eacute;l&eacute;charger le Manuel en format pdf)&nbsp;&nbsp;
+              [Format 21cm x 29.7cm sur feuilles A4, 216 pages, 12 Mb]</a>  </h1>
+<h1 align="center">
+         <a href=
+             "doc/DTM_Couverture_2016.pdf"><img border="0"
+             width="13"
+             height="15"
+             id="tutoriel"
+             src="image/pdf.gif">(T&eacute;l&eacute;charger la couverture du Manuel en format pdf)&nbsp;&nbsp;  </a></h1>                 
+             
+       <h3 align="center">(Ce manuel suppose que le logiciel a &eacute;t&eacute; t&eacute;l&eacute;charg&eacute;)
+       <br /> 
+        [Version fran&#231;aise, troisi&egrave;me &eacute;dition,  2016] <br />
+        <u>Cette version r&eacute;vis&eacute;e  (Dtm-Vic 6) comporte une annexe statistique </u>
+      </h3>
+            <hr size="2"
+                width="100%"
+                align="center">
+    
+<br />      
+<!--/div-->
+<div class=WordSection1>
+
+<p align="center" class=MsoNormal style='margin-left:14.2pt;text-align:justify;text-indent:
+-14.2pt'><b><span style='font-size:18.0pt;font-family:"Arial","sans-serif"'>    
+Manuel: <FONT COLOR=Maroon>&nbsp;&nbsp;Pratique de l'analyse des données numériques et textuelles avec Dtm-Vic </FONT>
+</span></b></p>
+<br />
+            <hr size="2"
+                width="100%"
+                align="center">
+<br />
+<br />
+<p class=MsoNormal style='margin-left:14.2pt;text-align:justify;text-indent:
+-14.2pt'><b><span style='font-size:16.0pt;font-family:"Arial","sans-serif"'>                               
+Sommaire du Manuel</span></b></p>
+
+
+
+
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:-14.2pt'><b><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Introduction</span></b></p>
+
+<p class=MsoNormal style='margin-left:14.2pt;text-align:justify;text-indent:
+-14.2pt'><b><span style='font-size:4.0pt;font-family:"Arial","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:-14.2pt'><b><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>I. Présentation générale
+de Dtm-Vic</span></b></p>
+
+<p class=MsoNormal style='margin-left:28.4pt;text-align:justify;text-indent:
+-14.2pt'><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Mise
+en place des fichiers de données</span></p>
+
+<p class=MsoNormal style='margin-left:28.4pt;text-align:justify;text-indent:
+-14.2pt'><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Techniques
+d’analyse de données</span></p>
+
+<p class=MsoNormal style='margin-left:28.4pt;text-align:justify;text-indent:
+-14.2pt'><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Visualisation
+des résultats</span></p>
+
+<p class=MsoNormal style='margin-left:28.4pt;text-align:justify;text-indent:
+-14.2pt'><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>La
+boite à outil</span></p>
+
+<p class=MsoNormal style='margin-left:28.4pt;text-align:justify;text-indent:
+-14.2pt'><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Format
+interne des fichiers de données</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:-14.2pt'><b><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>II. Données
+numériques :</span></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:-14.2pt'><b><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Prise en main de
+Dtm-Vic à partir de trois exemples</span></b></p>
+
+<p class=MsoNormal style='margin-left:28.4pt;text-align:justify;text-indent:
+-14.2pt'><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Analyse
+en Composantes Principales : «&nbsp;budget-temps&nbsp;»</span></p>
+
+<p class=MsoNormal style='margin-left:28.4pt;text-align:justify;text-indent:
+-14.2pt'><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Analyse
+des Correspondances : enquête médias</span></p>
+
+<p class=MsoNormal style='margin-left:28.4pt;text-indent:-14.2pt'><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Analyse
+des Correspondances Multiples : «&nbsp;aspirations&nbsp;»</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:-14.2pt'><b><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>III. Données
+textuelles et mixtes :</span></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:-14.2pt'><b><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Prise en main de
+Dtm-Vic à partir de trois autres exemples</span></b></p>
+
+<p class=MsoNormal style='margin-left:28.4pt;text-align:justify;text-indent:
+-14.2pt'><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span> Simple textes : Série de poèmes</span></p>
+
+<p class=MsoNormal style='margin-left:28.4pt;text-align:justify;text-indent:
+-14.2pt'><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span> Analyse Textuelle de questions ouvertes </span></p>
+
+<p class=MsoNormal style='margin-left:28.4pt;text-align:justify;text-indent:
+-14.2pt'><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span> Analyse directe de réponses libres. </span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:-14.2pt'><b><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>IV. Importation,
+création et exportation des fichiers au format Dtm-Vic </span></b></p>
+
+<p class=MsoNormal style='margin-left:28.4pt;text-align:justify;text-indent:
+-14.2pt'><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Fichiers
+numériques et textuels à partir d’Excel (r)</span></p>
+
+<p class=MsoNormal style='margin-left:28.4pt;text-align:justify;text-indent:
+-14.2pt'><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Saisie
+manuelle de données numériques</span></p>
+
+<p class=MsoNormal style='margin-left:28.4pt;text-align:justify;text-indent:
+-14.2pt'><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Exportation vers Excel</span></p>
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:-14.2pt'><b><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>V. Recodage,
+archivage, outils divers</span></b></p>
+
+<p class=Niveau1 style='margin-left:28.4pt;text-align:justify;text-indent:-14.2pt'><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Recodage,
+archivage</span></p>
+
+<p class=Niveau1 style='margin-left:28.4pt;text-align:justify;text-indent:-14.2pt'><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Intervention
+sur une base</span></p>
+
+<p class=Niveau1 style='margin-left:28.4pt;text-align:justify;text-indent:-14.2pt'><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Outils
+spécifiques de prétraitements</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:-14.2pt'><b><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>VI. Autres analyses
+avec Dtm-Vic</span></b></p>
+
+<p class=Niveau1 style='margin-left:14.2pt;text-align:justify'><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>1       Données
+numériques&nbsp;: Semiométrie</span></p>
+
+<p class=Niveau1 style='margin-left:14.2pt;text-align:justify'><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>2       Données
+numériques&nbsp;: Contiguïté (Iris de Fisher / Anderson)</span></p>
+
+<p class=Niveau1 style='margin-left:14.2pt;text-align:justify'><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>3       Description
+de graphes</span></p>
+
+<p class=Niveau1 style='margin-left:28.4pt;text-align:justify;text-indent:-14.2pt'><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial","sans-serif"'>Reconstitution
+d’images</span></p>
+<p>
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:-14.2pt'><b><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>VII. Annexes: Notions de statistique multidimensionnelle </b><br />
+<p class=Niveau1 style='margin-left:8.4pt;text-align:justify;text-indent:-14.2pt'><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>&nbsp;&nbsp;&nbsp;
+1.&nbsp;&nbsp;&nbsp;&nbsp;	Rappels des principes des méthodes exploratoires<br />
+2.&nbsp;&nbsp;&nbsp;&nbsp;	Les méthodes factorielles, aspects techniques<br />
+3.&nbsp;&nbsp;&nbsp;&nbsp;	Analyse en composantes principales (ACP)<br />
+4.&nbsp;&nbsp;&nbsp;&nbsp;	Analyse des correspondances (AC)<br />
+5.&nbsp;&nbsp;&nbsp;&nbsp;	Analyse des correspondances multiples (ACM)<br />
+6.&nbsp;&nbsp;&nbsp;&nbsp;	Autres méthodes<br />
+7.&nbsp;&nbsp;&nbsp;&nbsp;	Classification hiérarchiques, Arbre de longueur minimale<br />
+8. &nbsp;&nbsp;&nbsp;&nbsp;Partitions, cartes auto-organisées<br />
+9.&nbsp;&nbsp;&nbsp;&nbsp;  Classification mixte (ou : hybride)<br />
+10.&nbsp;&nbsp; Méthodes de validation<br />
+</span></p>
+<br />
+
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-indent:-14.2pt'><b><span
+style='font-size:12.0pt;font-family:"Arial","sans-serif"'>  Références
+bibliographiques sommaires</span></b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+
+<!-- ========================================================-->		
+
+            <hr size="2"
+                width="100%"
+                align="center">
+        
+        
+ <p>       
+ 
+     <a href="01_mainF.html"><b>Accueil</b> </a>
+ </p>     
+ </div> 
+</body>
+</html>

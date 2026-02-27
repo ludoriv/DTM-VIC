@@ -1,0 +1,1 @@
+The codes of these four functions and their contexts of use are pedagogical examples of the book <i> Analyse des Données textuelles </i> [Analysis of Textual Data] (L. Lebart, B. Pincemin, C. Poudat), Presses de l'Université du Québec [in French], 2019, in press.

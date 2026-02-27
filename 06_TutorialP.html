@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0BKW2ZEJ8G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0BKW2ZEJ8G');
+</script>
+<head>
+
+<title> DTM-Vic / Lebart </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" media="screen" type="text/css" title="Download" href="fichiers/download.css">
+
+    <meta name = "keywords"
+          lang = "Por"
+          content =
+          "Ludovic Lebart, an&aacute;lise de dados, estat&iacute;sticas textual, a an&aacute;lise multidimensional de textos,
+          Ling&uuml;&iacute;stica quantitativa, ling&uuml;&iacute;stica computacional, estat&iacute;stica descritiva multivariada
+          , an&aacute;lise de contig&uuml;idade an&aacute;lise de correspond&ecirc;ncia, softwares estat&iacute;sticos, pesquisa
+          t&eacute;cnicas, classifica&ccedil;&atilde;o, agrupamento, an&aacute;lise de correspond&ecirc;ncia m&uacute;ltipla, Self Organizing
+           mapas, Kohonen, Bootstrap, valida&ccedil;&atilde;o, avalia&ccedil;&atilde;o, metodologia de pesquisa, DTM, dtmvic, DTM-vic ">
+
+</head>
+    <body>
+<!-- ============================================== ========== -->
+<div id="corps">
+    
+    <a href="01_mainP.html"> <small><b> Voltar &agrave; p&aacute;gina principal </b> </small></a>
+<br />    
+        <h1>Tutoriais para DtmVic </h1>
+
+        <h3 align="center">
+         <a href=
+             "doc/Tutorial.pdf"><img border="0"
+             width="13"
+             height="15"
+             id="tutoriel"
+             src="image/pdf.gif">(Baixe o tutorial em pdf)</a></h3> 
+
+        <h3> (O software DtmVic deve ser baixado de antem&atilde;o, pois o tutorial
+        faz uso de exemplos) </h3>
+
+            <hr size = "2"
+                width = "100%"
+                align = "center">
+
+        <h2> Tutorial Um: Uma introdu&ccedil;&atilde;o ao DtmVic </h2>
+<div class="center">
+       <B>
+        Seis exemplos elementares para descobrir DtmVic </B>
+
+</div>
+<ul>
+<li> A1-<b> An&aacute;lise de Componentes Principais. </b> <br />
+Vari&aacute;veis ativas e passivas. Categorias Complementar. Valida&ccedil;&atilde;o Bootstrap.
+APC &eacute; seguido por um clustering de observa&ccedil;&otilde;es, bem como uma descri&ccedil;&atilde;o 
+dos clusters obtidos. </Li> <br />
+<li> A2-<b> An&aacute;lise de Correspond&ecirc;ncia. </b> <br />
+An&aacute;lise de correspond&ecirc;ncia de uma pequena tabela de conting&ecirc;ncia. Valida&ccedil;&atilde;o Bootstrap.
+</li> <br />
+<li> A3-<b> An&aacute;lise de Correspond&ecirc;ncia M&uacute;ltipla. </b> <br />
+Categorias activas e suplementares. Valida&ccedil;&atilde;o Bootstrap.
+MCA &eacute; seguido por um clustering de observa&ccedil;&otilde;es, bem como uma descri&ccedil;&atilde;o dos clusters obtidos.
+</li> <br />
+<li> A4-<b> An&aacute;lise de Correspond&ecirc;ncia de uma tabela lexical. </b> <br />
+An&aacute;lise de uma simples s&eacute;rie de textos (20 primeira Sonetos de Shakespeare). Num&eacute;rica
+codifica&ccedil;&atilde;o. A an&aacute;lise de correspond&ecirc;ncia de uma "palavras x poemas" tabela. Valida&ccedil;&atilde;o Bootstrap.
+Caracter&iacute;stica palavras e versos. Mapas de Kohonen. Seria&ccedil;&atilde;o. </Li> <br />
+<li> A5-<b> Quest&otilde;es em aberto um inqu&eacute;rito por amostragem. </b> <br />
+Utiliza&ccedil;&atilde;o de dados tanto num&eacute;rica e textual. Processamento das respostas a uma quest&atilde;o em aberto usando um espec&iacute;fico
+vari&aacute;vel categ&oacute;rica. C&oacute;digos num&eacute;ricos das respostas. An&aacute;lise de correspond&ecirc;ncia da tabela lexical palavras x
+categorias. Valida&ccedil;&atilde;o Bootstrap. Descri&ccedil;&atilde;o das categorias atrav&eacute;s das suas palavras e respostas caracter&iacute;sticas.
+Mapas de Kohonen simult&acirc;nea para as palavras e categorias. </Li><br />
+
+<li> A6-<b> Quest&otilde;es em aberto um inqu&eacute;rito por amostragem: Primeira pesquisa </b> <br />
+Primeiro processamento das respostas a uma quest&atilde;o em aberto. C&oacute;digos num&eacute;ricos das respostas. 
+Correspond&ecirc;ncia An&aacute;lise (CA) da tabela esparsa  "palavras x entrevistados".
+Este exemplo leva em conta as informa&ccedil;&otilde;es sobre fechada perguntas.  
+ Clustering das respostas, e uma descri&ccedil;&atilde;o do clusters obtidos atrav&eacute;s de suas palavras 
+ caracter&iacute;sticas e respostas. Mapa de Kohonen  de palavras e para os inquiridos.
+                    </li> <br />
+</ul>
+       
+
+            <hr size = "2"
+                width = "100%"
+                align = "center">
+        
+
+         <h2> Tutoriel B: DtmVic e dados textuais </h2>
+<div class="center">
+         <B>
+         Tr&ecirc;s mais exemplos para praticar DtmVic com dados textuais </B>
+</div>
+             <br /> <br />
+
+      
+Os exemplos a seguir usam arquivos de comando existentes (ou: arquivos de par&acirc;metro). Cada
+exemplo, corresponde a um diret&oacute;rio inclu&iacute;dos no diret&oacute;rio "DtmVic-Examples_B_Texts" que
+foi baixado com DtmVic.
+
+<ul>
+
+<li> B1-<b> Quest&otilde;es em aberto um inqu&eacute;rito por amostragem: concord&acirc;ncias.
+                   </b> <br />
+C&oacute;digos num&eacute;ricos das respostas. 
+Exemplos de altera&ccedil;&atilde;o do limite de freq&uuml;&ecirc;ncia de palavras.
+Exemplo de concord&acirc;ncias (contexto sint&aacute;tico), para algumas palavras. 
+CA da tabela de palavras lexicais "inquiridos x agrupamentos das respostas", e uma descri&ccedil;&atilde;o dos clusters obtidos atrav&eacute;s de suas palavras caracter&iacute;stica, respostas
+e tamb&eacute;m atrav&eacute;s de categorias caracter&iacute;stica (perguntas fechadas). 
+Mapas Kohonen para palavras e para os inquiridos.
+</li> <br />
+<li> B2-<b> perguntas abertas e MCA em um inqu&eacute;rito por amostragem </b> <br />
+
+An&aacute;lise de correspond&ecirc;ncia m&uacute;ltipla e agrupamento de respondentes com perguntas fechadas. 
+Processamento de agregados [e lemmatised] respostas a perguntas abertas. 
+O exemplo apresenta uma outra t&eacute;cnica para agrupar respostas.
+ Numa primeira fase, uma an&aacute;lise de correspond&ecirc;ncia m&uacute;ltipla &eacute;
+executada em um conjunto de vari&aacute;veis categ&oacute;ricas selecionadas 
+(ou seja, respostas a perguntas fechadas de-final). Os eixos principais
+visualiza&ccedil;&atilde;o &eacute; complementada com um clustering, seguido por uma 
+descri&ccedil;&atilde;o autom&aacute;tica dos clusters. Esses clusters
+s&atilde;o ent&atilde;o utilizados para agregar as respostas a uma quest&atilde;o em aberto.
+</li> <br />
+<li> B3-<b> Visualiza&ccedil;&atilde;o da rede sem&acirc;ntica de verbos franc&ecirc;s </b> <br />
+Visualiza&ccedil;&atilde;o das rela&ccedil;&otilde;es sem&acirc;nticas existentes entre os 829 verbos franc&ecirc;s. Cada verbo &eacute; descrito por uma lista de
+"sin&ocirc;nimos". </li> <br />
+</ul>
+
+            <hr size = "2"
+                width = "100%"
+                align = "center">
+        
+        <h2> Tutorial C: DtmVic com dados num&eacute;ricos:
+Semiometry, os Dados "Iris" de Fisher , Gr&aacute;ficos, Imagens. </h2> 
+<div class="center">
+        <B> Quatro exemplos para praticar DtmVic
+        com dados num&eacute;ricos </B><br />
+</div>
+<ul>
+<li> C1-<b> Visualiza&ccedil;&atilde;o em An&aacute;lise de Componentes Principais </b> <br />
+C1 exemplo usa "semiometric" dados . A visualiza&ccedil;&atilde;o dos eixos principais &eacute; 
+complementada por um clustering, com um autom&aacute;tico
+descri&ccedil;&atilde;o dos clusters. Bootstrap procedimentos, mapas de Kohonen s&atilde;o seguidos por diversas ferramentas de visualiza&ccedil;&atilde;o
+previsto no sub-menu "visualiza&ccedil;&atilde;o" da fase "VIC": visualiza&ccedil;&atilde;o de clusters (ou categorias), utilizando s&iacute;mbolos
+ou cores, casca convexa ou elipses densidade de clusters, &aacute;rvore geradora m&iacute;nima, 
+desenho da  diversos gr&aacute;ficos de pr&oacute;ximos vizinhos.
+<br /><br />
+<li> C2-<b> PCA e contiguidade An&aacute;lise de Iris Fisher Data </b> <br />
+ Exemplo C2 visa analisar uma s&eacute;rie cl&aacute;ssica de vari&aacute;veis num&eacute;ricas (Os dados Iris conjunto de Anderson / Fisher), atrav&eacute;s
+An&aacute;lise de Componentes Principais, Classifica&ccedil;&atilde;o, contiguidade Analysis, Discriminant Analysis. Os eixos principais
+visualiza&ccedil;&atilde;o &eacute; complementada com um clustering, incluindo uma descri&ccedil;&atilde;o autom&aacute;tica dos clusters.
+ exemplo C2 &eacute; muito semelhante ao exemplo A1: An&aacute;lise de componentes principais e classifica&ccedil;&atilde;o
+(clustering) de um conjunto de dados num&eacute;ricos, com v&aacute;rias ferramentas de visualiza&ccedil;&atilde;o, envolvendo tamb&eacute;m uma espec&iacute;fica categ&oacute;rica vari&aacute;riavel . Ele
+apresenta em seguida, as melhorias previstas por contig&uuml;idade e An&aacute;lise e um caso mais particular do cl&aacute;ssico
+Contiguidade An&aacute;lise: Linear Discriminant Analysis.
+</li> <br />
+<li> C3-<b> Descri&ccedil;&atilde;o de gr&aacute;fos atrav&eacute;s de an&aacute;lise de correspond&ecirc;ncia </b> <br />
+Visualiza&ccedil;&atilde;o de uma s&eacute;rie de gr&aacute;fos simples planar sim&eacute;trico, principalmente por meio de correspond&ecirc;ncia
+an&aacute;lise. Os tr&ecirc;s gr&aacute;fos s&atilde;o grafos planares: um gr&aacute;fo em forma de tabuleiro de xadrez, um ciclo, e dois gr&aacute;fos emp&iacute;ricos suposto
+representam  mapas das regi&otilde;es do Jap&atilde;o e Fran&ccedil;a.
+Esses exemplos fornecem uma ponte entre as facetas distintas de DtmVic: um mesmo gr&aacute;fo
+ pode levar &agrave; entrada de dados diferentes:
+cl&aacute;ssica dados num&eacute;ricos, dados textuais, e um modelo espec&iacute;fico "externo".
+</li> <br />
+<li> C4-<b> estruturais de compress&atilde;o de imagens atrav&eacute;s de SVD e CA </b> <br />
+Exemplo C4 pode ser visto como um ap&ecirc;ndice pedag&oacute;gica. N&atilde;o faz uso de dados em formato DtmVic, uma vez que
+lida com imagens digitalizadas. Uma simples matriz retangular de inteiros basta: n&atilde;o h&aacute; necessidade de identificadores para linhas
+ou colunas. Uma interface especializado &eacute; fornecido atrav&eacute;s do bot&atilde;o "DtmVic Ferramentas" do menu principal.
+
+</li>
+</ul>
+       
+
+            <hr size = "2"
+                width = "100%"
+                align = "center">
+        
+        <h2> Tutorial D: importa&ccedil;&atilde;o de dados </h2>
+<div class="center">
+        <B>Exemplos de importa&ccedil;&atilde;o de dados
+        para DtmVic </B></a><br /><br />
+
+</div>
+
+
+O tutorial D come&ccedil;a por descrever o formato interno para o software.
+&Eacute; um formato espec&iacute;fico, mas &eacute; um formato n&atilde;o propriet&aacute;rio (texto: .txt). 
+Por conseguinte, &eacute; transparente para o usu&aacute;rio. Por fim, apresentamos quatro tipos de importa&ccedil;&otilde;es, o mais comum.<br /> <br />
+<ul>
+<li> D1-<b> Importa&ccedil;&atilde;o de dados num&eacute;ricos de um Excel &reg; arquivo </b> </li><br />
+<li> D2-<b> Importa&ccedil;&atilde;o de dados textuais em um formato livre de arquivos </b> </li><br />
+<li> D3-<b> Importa&ccedil;&atilde;o de tanto num&eacute;rica como dados textuais de um formato de arquivo XML </b> </li><br />
+                    
+</ul>
+
+            <hr size = "2"
+                width = "100%"
+                align = "center">
+        
+     <a href="01_mainP.html"> <small><b> Voltar &agrave; p&aacute;gina principal </b> </small> </a>
+ </div>
+</body>
+</html> 

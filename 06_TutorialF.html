@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0BKW2ZEJ8G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0BKW2ZEJ8G');
+</script>	
+		<title> Dtm-Vic / Lebart </title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" media="screen" type="text/css" title="Download" href="fichiers/download.css">
+
+    <meta name="keywords"
+          lang="fr"
+          content=
+          "Lebart Ludovic, Analyse de donn&eacute;s, statistique textuelle, 
+          contiguit&eacute;, analyse des correspondances, logiciels statistiques, 
+          m&eacute;thodologie d'enqu&ecirc;te, classification, bootstrap, 
+          Kohonen, lexicom&eacute;trie, textom&eacute;trie, dtm, dtmvic, dtm-vic">
+
+	</head>
+    <body>
+<!-- ========================================================-->		
+		<div id="corps">
+    
+    <a href="01_mainF.html"><b>Accueil</b> </a>
+    
+        <h1>Tutoriel Interne pour DtmVic</h1>
+
+        <h3 align="center">
+         <a href=
+             "doc/Tutorial.pdf"><img border="0"
+             width="13"
+             height="15"
+             id="tutoriel"
+             src="image/pdf.gif">(T&eacute;l&eacute;charger le Tutoriel en format pdf)</a></h3>
+             
+       <h3 align="center">(Ces tutoriels supposent que le logiciel a &eacute;t&eacute; t&eacute;l&eacute;charg&eacute;)
+       <br /> 
+        [Le tutoriel interne est en Anglais, mais le manuel d'utilisation, plus &eacute;labor&eacute; est en Francais]
+      </h3>
+
+            <hr size="2"
+                width="100%"
+                align="center">
+
+        <h2>Tutoriel A :&nbsp; Introduction &agrave; DtmVic &agrave; partir de 6 exemples 
+        </h2>
+
+            <hr size="2"
+                width="100%"
+                align="center">
+
+        <p >On pr&eacute;sente dans ce tutoriel six exemples d'analyses
+        classiques offrant une vue g&eacute;n&eacute;rale des possibilit&eacute;s du logiciel: 
+        gestion des variables actives et suppl&eacute;mentaires, compl&eacute;mentarit&eacute; syst&eacute;matique 
+        avec la classification, validation des visualisations par bootstrap, cartes de Kohonen. 
+        </p>
+				<ul>
+<li> A1-<b> Analyse en composantes principales. </b> <br />
+Variables Actives et suppl&eacute;mentaires. Cat&eacute;gories suppl&eacute;mentaires. Validation Bootstrap.
+L'ACP est suivie d'une classification des observations, et d'une description automatique des classes obtenues. </li> <br />
+
+<li> A2-<b> Analyse des Correspondances. </b> <br />
+Analyse des Correspondances d'un petit tableau de contingence. Validation Bootstrap.
+</li> <br />
+
+<li> A3-<b> Analyse des correspondances multiples. </b> <br />
+Cat&eacute;gories actives et suppl&eacute;mentaires. Validation Bootstrap.
+L'ACM est suivie d'une classification des observations, et d'une description automatique des classes obtenues.
+</li> <br />
+
+<li> A4-<b> Analyse des correspondances d'un tableau lexical. </b> <br />
+Traitement d'une simple s&eacute;rie de textes (20 premiers sonnets de Shakespeare).
+Codage num&eacute;rique. Analyse des Correspondances du tableau lexical mots x po&egrave;mes. Validation Bootstrap.
+Mots et vers caract&eacute;ristiques. Cartes de Kohonen. S&eacute;riation. </li> <br />
+
+<li> A5-<b> Questions ouvertes dans une enqu&ecirc;te par sondage. </b> <br />
+On utilise ici des donn&eacute;es &agrave; la fois num&eacute;riques et textuelles. Le traitement des r&eacute;ponses &agrave; une question ouverte utilise ici 
+une variable nominale sp&eacute;cifique. Codage num&eacute;rique des r&eacute;ponses. Analyse des correspondances d'un tableau lexical mots x cat&eacute;gories. 
+Validation Bootstrap. Description des cat&eacute;gories par leurs mots caract&eacute;ristiques et leurs r&eacute;ponses modales.
+ Carte de Kohonen simultan&eacute;e pour les mots et les cat&eacute;gories. </li><br />
+
+<li> A6-<b> Questions ouvertes dans une enqu&ecirc;te par sondage: Premi&egrave;re exploration, liens ouvert-ferm&eacute;. </b> <br />
+Premier traitement des r&eacute;ponses &agrave; une question ouverte. Codage num&eacute;riques des r&eacute;ponses. 
+Analyse des correspondances (CA) de la table lexicale clairsem&eacute;e (sparse) r&eacute;pondants x mots. 
+Lien avec les questions ferm&eacute;es </b> <br />
+ Classification des r&eacute;ponses, et description des classes obtenues par leurs mots et r&eacute;ponses 
+ caract&eacute;ristiques, et aussi &agrave; travers leurs cat&eacute;gories caract&eacute;ristique 
+ (questions ferm&eacute;es). Cartes de Kohonen pour les mots et pour les r&eacute;pondants.
+</li> <br />
+
+				</ul>
+       
+
+            <hr size="2"
+                width="100%"
+                align="center">
+        
+
+         <h2>Tutoriel B :&nbsp; Trois exemples d'analyses de donn&eacute;es textuelles </h2>
+
+            <hr size="2"
+                width="100%"
+                align="center">
+
+        <p >Le tutoriel B s'adresse &agrave; des utilisateurs plus avanc&eacute;s qui veulent 
+        aller au del&agrave; des analyses pr&eacute;-programm&eacute;es et utiliser les fichiers de commandes 
+        (mod&egrave;les fournis). Les trois exemples concernent les donn&eacute;es textuelles.
+        </p>
+				<ul>
+
+<li> B1-<b> Questions ouvertes dans une enqu&ecirc;te par sondage: Premi&egrave;re exploration, concordances. </b> <br />
+Premier traitement des r&eacute;ponses &agrave; une question ouverte. Codage num&eacute;riques des r&eacute;ponses.
+Exemples de modification du seuil de fr&eacute;quence pour les mots. Exemple de concordances (contexte syntaxique) pour certains mots. 
+Analyse des correspondances (CA) de la table lexicale clairsem&eacute;e (sparse) r&eacute;pondants x mots, Classification des r&eacute;ponses, et description des
+classes obtenues par leurs mots et leurs r&eacute;ponses caract&eacute;ristiques. Carte de Kohonen pour les mots et pour les r&eacute;pondants.
+                    </li> <br />
+<li> B2-<b> Analyse des correspondances multiples et questions ouvertes </b> <br />
+
+Analyse des correspondances multiples et classification des r&eacute;pondants &agrave; l'aide de questions ferm&eacute;es. 
+Traitement des r&eacute;ponses aux questions ouvertes agr&eacute;g&eacute;es
+[et lemmatis&eacute;es]. L'exemple met en avant une autre technique pour le regroupement des
+r&eacute;ponses. Dans une premi&egrave;re phase, une analyse des correspondances multiples est
+effectu&eacute;es sur un ensemble de variables nominales (par exemple: les r&eacute;ponses aux questions ferm&eacute;es). 
+La visualisation est compl&eacute;t&eacute;e par une classification, suivie d'une description automatique des classes. Ces classes 
+sont ensuite utilis&eacute;es pour agr&eacute;ger les r&eacute;ponses &agrave; &agrave; une question ouverte.
+La table obtenue est ensuite analys&eacute;e comme lors de l'exemple A.5.
+</li> <br />
+<li> B3-<b> Visualisation du r&eacute;seau s&eacute;mantique des verbes fran&ccedil;ais </b> <br />
+Visualisation des liens s&eacute;mantiques existant entre 829 verbes fran&ccedil;ais. Chaque verbe est d&eacute;crit par une liste de
+"synonymes". </li> <br /> 
+
+
+
+ </ul>
+       
+
+            <hr size="2"
+                width="100%"
+                align="center">
+        
+        <h2>Tutoriel C :&nbsp; Quatre exemples d'analyse de donn&eacute;es num&eacute;riques
+        </h2>
+
+            <hr size="2"
+                width="100%"
+                align="center">
+
+        <p >On pr&eacute;sente dans ce tutoriel quatre exemples pour approfondir les analyses de donnes num&eacute;riques.
+        </p>
+				<ul>
+                            
+<li> C1-<b> Diverses visualisations en Analyse en composantes principales </b> <br />
+L'exemple C1 utilise un extrait des donn&eacute;es s&eacute;miometriques (voir l'ouvrage "La s&eacute;miom&eacute;trie", 
+par L. Lebart, M. Piron t J.-F. Steiner, t&eacute;l&eacute;chargeable en pdf &aacute; partir de l'item "Publications" du menu). 
+La visualisation &aacute; partir des axes principaux est compl&eacute;t&eacute;e par une classification et une 
+description automatique des classes.  La validation Bootstrap puis les cartes de Kohonen sont suivies par 
+les diff&eacute;rents outils de visualisation pr&eacute;vues dans le sous-menu "Visualisation" de la 
+phase "VIC" (VIC = Visualisation, Inf&eacute;rence, Classification): visualisation des clusters 
+(ou cat&eacute;gories) en utilisant des symboles ou des couleurs, enveloppes convexes ou ellipses de densit&eacute; 
+pour les classes, arbre de longueur minimale (MST=Minimum spanning tree), mise en &eacute;vidence des plus proches voisins.
+</li><br />
+
+<li> C2-<b> Analyse de Contigu&iuml;t&eacute; et analyse discriminante (Iris de Fisher) </b> <br />
+ L'exemple C3 vise &agrave; analyser un ensemble classique de variables num&eacute;riques (les donn&eacute;es 
+ IRIS de Anderson / Fisher) par Analyse en composantes principales, Classification, Analyse de contigu&iuml;t&eacute;, 
+ Analyse discriminante. La  visualisation &agrave; partir des axes principaux est compl&eacute;t&eacute;e par 
+ une classification comprenant une description automatique des classes.
+Au d&eacute;part, l'exemple C3 est tr&egrave;s similaire &agrave; l'exemple C2: Analyse en composantes principales et classification
+(clustering) d'un ensemble de donn&eacute;es num&eacute;riques, avec diff&eacute;rents outils de visualisation,
+ impliquant aussi une variable nominale sp&eacute;cifique (les trois groupes d'iris). L'exemple pr&eacute;sente 
+ ensuite les am&eacute;liorations apport&eacute;es par l'analyse de contigu&iuml;t&eacute; et un cas particulier 
+ important de l'analyse de Contigu&iuml;t&eacute; : l'Analyse discriminante de Fisher (<i>Linear Discriminant Analysis</i>).
+</li> <br />
+<li> C3-<b> Description de graphes par analyse des correspondances </b> <br />
+Visualisation d'une s&eacute;rie de graphes planaires simples sym&eacute;triques, principalement &agrave; 
+partir de l'analyse des correspondances. Les trois graphes sont des graphes planaires: un graphe en forme de 
+damier, un cycle, et deux graphes empiriques cens&eacute;s repr&eacute;senter les cartes des 
+r&eacute;gions du Japon et de la France. Ces exemples jettent un pont entre les aspects sp&eacute;cifiques 
+de DtmVic: un m&ecirc;me graphique peut conduire &agrave; des donn&eacute;es d'entr&eacute;e diff&eacute;rentes:
+ des donn&eacute;es num&eacute;riques classiques, des donn&eacute;es textuelles, et des donn&eacute;es sous un 
+ "format externe" sp&eacute;cifique.
+</li> <br />
+<li> C4-<b> Compression d'images par D&eacute;composition aux Valeurs Singuli&egrave;res 
+                            et par Analyse des Correspondances </b> <br />
+L'exemple C5 peut &ecirc;tre consid&eacute;r&eacute; comme une annexe p&eacute;dagogique. 
+Il ne fait pas usage de donn&eacute;es au format DtmVic, car il traite d'images num&eacute;ris&eacute;es. 
+Un simple tableau rectangulaire de nombres entiers suffit : il n'est pas n&eacute;cessaire de disposer 
+d'identificateurs de lignes ou de colonnes. Cette &eacute;tape montre comment la d&eacute;composition aux valeurs singuli&egrave;res
+ et l'analyse des correspondances peuvent reconstituer progressivemnts des images. Comparaison avec les
+ s&eacute;ries de Fourier discr&egrave;tes.
+Une interface sp&eacute;cialis&eacute;e est fournie via le bouton "DtmVic Tools" du menu principal.
+
+</li>                             
+                            
+                            
+                            
+				</ul>
+       
+
+            <hr size="2"
+                width="100%"
+                align="center">
+        
+        <h2>Tutoriel D :&nbsp; Importation des donn&eacute;es et des textes au format DtmVic </h2>
+
+            <hr size="2"
+                width="100%"
+                align="center">
+
+        <p >Apr&egrave;s avoir d&eacute;crit les <B>formats de donn&eacute;es internes &agrave; DtmVic</B>, On pr&eacute;sente 
+        dans ce tutorial trois exemples d'importations de donn&eacute;es et de textes :
+        </p>
+				<ul>
+					<li>D1- <b>Importation de donn&eacute;es num&eacute;riques et textuelles en format "Excel" &reg; </b></li><br />
+					<li>D2- <b>Importation de donn&eacute;es textuelles en format libre</b></li><br />
+					<li>D3- <b>Importation de donn&eacute;es num&eacute;riques et textuelles en format XML</b></li>
+				</ul>
+       
+
+            <hr size="2"
+                width="100%"
+                align="center">
+        
+        
+        
+ 
+     <a href="01_mainF.html"><b>Accueil</b> </a>
+ </div> 
+</body>
+</html>

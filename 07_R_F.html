@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0BKW2ZEJ8G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0BKW2ZEJ8G');
+</script>	
+		<title> DtmVic / Lebart </title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" media="screen" type="text/css" title="Python" href="fichiers/python.css">
+
+    <meta name="keywords"
+          lang="en"
+          content=
+           "Lebart Ludovic, data analysis, textual statistics, textual data, multidimensional analysis of texts, Python, R, text mining, quantitative linguistics, computational linguistics, semiometric challenge, multivariate descriptive statistical analysis, contiguity analysis, correspondence analysis, statistical softwares, semiometry, survey techniques, classification, clustering, multiple correspondence analysis,Self Organizing maps, Kohonen, Bootstrap, Validation, assessment, Survey methodology, dtmvic"> 
+	</head>
+    <body>
+<!-- ========================================================-->		
+		<div id="corps">
+<h3 id="Top"> </h3>      
+    <a href="index.html"><b>Accueil</b> </a>
+  
+        <h2 align="center">Exemples de quatre fonctions élémentaires en R</h2>
+ <h3 align="center">
+            <hr size="2"
+                width="100%"
+                align="center">
+                    <p><img src="image/fleche.gif"
+                         name="Image5"
+                         align="bottom"
+                         width="8"
+                         height="11"
+                         border="0"> <a href=
+                         "DEA/ADT_R.zip">
+                         Chargement du fichier compressé de codes et de données [dossier: "ADT_R"]</a></p>
+</h3>				
+  <hr size="2", width="100%", align="center">
+		   <p style='font-size:12px; color:maroon'> Les codes de ces quatre fonctions et leurs contextes d'utilisation 
+		   constituent des exemples pédagogiques du livre <i> Analyse des Données Textuelles </i> (L. Lebart, B. Pincemin, C. Poudat), Presse de l'Université du Québec, 2019. </p>
+  <hr size="2", width="100%", align="center">
+
+<p >Le logiciel R est à la fois un langage et une bibliothèque. Comme Python, il s’agit d’un logiciel gratuit et multiplateforme. C’est la composante non exclusive (logiciel libre) du langage de programmation S (Chambers, 1998), elle-même dérivée des travaux d’une équipe de Bell Laboratories datant de 1976 (équipe composée de Rick Becker, John Chambers, Doug Dunn, Paul Tukey et Graham Wilkinson).
+</p>
+</h2>
+            <hr size="2", width="100%", align="center">
+		<p style='font-size:20px; text-align: center'><FONT COLOR=Maroon> <b> Sommaire</b></FONT><br/>
+		<p align = "left"><a href = "#A1"><FONT COLOR=Maroon> 1-<b> Compression et reconstruction d'images (avec affichage graphique)</b></FONT></a><br/>
+		<p align = "left"><a href = "#A2"><FONT COLOR=Maroon> 2-<b> Analyse en composantes principales (avec affichage graphique)</b></FONT></a><br/>
+		<p align = "left"><a href = "#A3"><FONT COLOR=Maroon> 3-<b> Analyse des correspondances (avec affichage graphique)</b></FONT></a><br/>
+		<p align = "left"><a href = "#A4"> <FONT COLOR=Maroon>4- <b> Calcul et tracé (sur un plan principal) de l'arbre de longueur minimale </FONT></b></a>
+		</FONT></p>
+
+<hr size="2", width="100%", align="center">
+<h3 id="A1"> </h3>
+<p align = "left"><a href = "#Top">
+<img src="image/return.gif" alt = "Top" width="30" height="20" border="1"/></a></p>
+<h2 align="center"> <span style='font-family:"Courier New"'> <FONT COLOR=Blue>1-<b> Compression et reconstruction d'images (avec graphiques)</b></FONT></span></h2> 
+
+<p>Comme pour Python, il s'agit simplement de pénétrer, grâce à R, dans la boîte noire d’une fonctionnalité banale disponible dans la plupart des logiciels statistiques d’analyse d’images.</p>
+ Evidemment, le code pourrait être beaucoup plus compact, mais peut-être moins lisible. 
+
+<p align="center"; style='font-size:14.0pt;font-family:"Courier New";color:red'><b>Commandes pour l'interface R</b></p> 
+<b> 
+<pre><FONT SIZE = 4><FONT COLOR=Blue>#-------------------------------------</FONT>
+source("c:\\ADT_R\\svd_image_E.r") <FONT COLOR=Blue> # code source </FONT>
+path= "c:\\ADT_R\\Cheetah.txt"  <FONT COLOR=Blue>  # données (niveaux de gris)</FONT>
+X=read.table(path, header=FALSE, row.names=1, sep = "")
+nd = 8 <FONT COLOR=Blue>   # nombre d'axes pour la reconstitution (par exemple)</FONT>
+Y = recons(X, nd)
+visu_image(Y)<FONT COLOR=Blue>
+#-------------------------------------</FONT>  
+</FONT>
+</pre>
+</span>
+</b>
+<p>Le petit fichier de test de données «Cheetah.txt» est fourni dans le dossier ADT_R. C'est un tableau numérique simple (200 x 320) [niveaux de gris pour chaque pixel]. Voir: Nelson M. (1993). <i>La compression des données. Text, images, sons.</i> Dunod, Paris.<p>
+<p>
+<b>Cas d'une image plus générale au format ".pgm" (Portable Grey Map)</b><br />
+Le fichier "Cheetah.txt" dans cet exemple est une matrice simple, plus rustique que les formats d'image les plus courants (bmp, jpg, png).
+Ces images doivent être converties au format pgm par un logiciel libre tel que GIMP ou IrfanView. La matrice X de lignes de commande est ensuite obtenue à l'aide des quatre lignes de commande suivantes:
+<b>  
+<pre><FONT SIZE = 4><FONT COLOR=Blue>#-------------------------------------
+# Quatre lignes de commandes à substituer à la ligne:
+# "X = read.table ..." dans le cas d'une image en format pgm 
+#-------------------------------------</FONT>
+install.packages ( "pixmap");<FONT COLOR=Blue> # à n'utiliser que la première fois ! ...</FONT>
+library (pixmap);<FONT COLOR=Blue> # chargement du "pixmap package"</FONT>
+imag = read.pnm (""c:\\ADT_R\\Cheetah.pgm");<FONT COLOR=Blue> # pour une image "pgm" </FONT>
+X = 255 * imag @ gray; <FONT COLOR=Blue># On peut maintenant appeler la fonction: recons ()
+#-------------------------------------</FONT></FONT></b>
+</pre>
+
+<p> L'image ci-dessous est fournie par la fonction: recon(): </p>
+<p align = "center"><img src="image_PyR/image_guepard8.jpg" alt = "Cheetah image"/> </p>
+<p style='font-size:18px; text-align: center'><b> Image obtenue après avoir saisi les lignes de commandes R . Taux de compression  200/8 = 25 (8 axes principaux).</b></p>
+<hr size="3", width="100%", align="center">
+<!-- ===============================================================-->
+<br/><br/>
+
+
+<h3 id="A2"> </h3>
+<p align = "left"><a href = "#Top">
+<img src="image/return.gif" alt = "Top" width="30" height="20" border="1"/></a></p>
+<h2 align="center"> <span style='font-family:"Courier New"'> <FONT COLOR=Blue>2-<b> Analyse en composantes principales (avec affichage graphique)</b></FONT></span></h2> 
+
+<p>Il s’agit simplement d’obtenir, grâce à R, une fonctionnalité disponible dans la plupart des logiciels statistiques d’analyse exploratoire multivariée.</p>
+ Encore une fois, le code pourrait être beaucoup plus compact, mais peut-être moins lisible.
+
+<p align="center"; style='font-size:14.0pt;font-family:"Courier New";color:red'><b>Commandes pour l'interface R </b></p> 
+<b> 
+<pre><FONT SIZE = 4><FONT COLOR=Blue>#-------------------------------------
+# Commandes pour l'interface R</FONT>
+source("c:/ADT_R/ACPS_E.r")   <FONT COLOR=Blue>          # emplacement du code source</FONT>
+path= "c:/ADT_R/Mini_Semio.txt" <FONT COLOR=Blue>        # emplacement des données</FONT>
+X=read.table(path, header=TRUE, row.names=1, sep = ",")<FONT COLOR=Blue> # X = tableau de données</FONT>
+Y =ACP(X)                    <FONT COLOR=Blue>           # fonction principale</FONT>
+plot_ind (Y, X, hor=2, ver=3, font = 1) <FONT COLOR=Blue># graphe des individus (lignes)</FONT>
+                                  <FONT COLOR=Blue>       # (plane (2, 3) )</FONT>
+plot_var (Y, X, hor=2, ver=3, font = 1) <FONT COLOR=Blue># graphe des variables (colonnes)</FONT>
+                                  <FONT COLOR=Blue>       # (plan (2, 3) )
+#--------------------------------------------------</FONT>
+</FONT>
+</pre>
+
+</b>
+<p>Le petit fichier de test de donn&eacute;es «Mini_semio.txt» est fourni dans le dossier ADT_R. Il s’agit d’un simple tableau num&eacute;rique (12 x 7) donnant les scores attribu&eacute;s par 12 r&eacute;pondants à un ensemble de 7 mots. La <i>liste s&eacute;miom&eacute;trique</i> r&eacute;elle contient 210 mots et la taille des &eacute;chantillons varie de 800 à plusieurs milliers. Voir :
+   <i>The Semiometric Challenge: Words, Lifestyles and Values</i>                                                        
+ &nbsp;&nbsp;(L. Lebart, J-F. Steiner, M. Piron, J. Wisdom), <i>L2C, 2014.</i>   
+         <a href="/doc/Semio_2014_format_169x244.pdf"><img id="tutoriel" src="fichiers/pdf.gif" border="0" height="15" width="13">(Télécharger le livre - pdf)&nbsp;&nbsp; </a>
+         <a href="/doc/Semio_2014_Cover_354x244.pdf"><img id="tutoriel" src="fichiers/pdf.gif" border="0" height="15" width="13">(Télécharger la couverture du livre - pdf)&nbsp;&nbsp; </a>
+		 
+... et (en Français) <i>La s&eacute;miom&eacute;trie</i> (L. Lebart, M. Piron, J.-F. Steiner), <i>Dunod, 2003. </i> <a href="Semiometrie.html"><img id="tutoriel" src="fichiers/pdf.gif" border="0" height="15" width="13">(Télécharger le livre - pdf)&nbsp;&nbsp; </a>                 
+
+
+<hr align="center" size="2" width="30%">
+<p>
+<b>  
+<FONT SIZE = 4>
+<p align = "center">Petit tableau-test ("Mini-semio.txt")</p>
+<pre>
+   arbre, cadeau, danger, morale, orage, politesse, sensuel     
+R01,  7,   4,     2,      2 ,     3 ,        1 ,     6    
+R02,  6 ,  3 ,    1 ,     2 ,     4 ,        1 ,     7    
+R03,  4 ,  5 ,    3 ,     4 ,     3 ,        4 ,     3    
+R04,  5 ,  5 ,    1 ,     7 ,     2 ,        7 ,     1    
+R05,  4 ,  5 ,    2 ,     7 ,     1 ,        6 ,     2    
+R06,  5 ,  7 ,    1 ,     5 ,     2 ,        6 ,     5    
+R07,  4 ,  2 ,    1 ,     3 ,     5 ,        3 ,     6    
+R08,  4 ,  1 ,    5 ,     4 ,     5 ,        4 ,     7    
+R09,  6 ,  6 ,    2 ,     4 ,     7 ,        5 ,     5    
+R10,  6 ,  6 ,    3 ,     5 ,     3 ,        6 ,     6    
+R11,  7 ,  7 ,    6 ,     7 ,     7 ,        6 ,     7    
+R12,  2 ,  2 ,    1 ,     2 ,     1 ,        3 ,     2
+
+</FONT>
+</FONT></b>
+</pre></span>
+  <hr align="center" size="2" width="100%">
+
+<p> L'image ci-dessous est l'image produite par les fonctions <b>ACP()</b> et <b>plot_ind</b>: </p>
+<p align = center><img src="image_PyR/image_PCA.jpg" alt = "PCA: plane (2,3)"/> </p>
+<p style='font-size:18px; text-align: center'><b> Image obtenue après avoir saisi les cinq lignes de commande R<br/>Représentation des 12 répondants dans le plan "semiometrique" (2, 3) </b></p>
+<hr size="3", width="100%", align="center">
+
+<br/>
+
+<h3 id="A3"> </h3>
+<p align = "left"><a href = "#Top">
+<img src="image/return.gif" alt = "Top" width="30" height="20" border="1"/></a></p>
+<h2 align="center"> <span style='font-family:"Courier New"'> <FONT COLOR=Blue>3-<b> Analyse de correspondance (avec affichage graphique)</b></FONT></span></h2> 
+
+<p>Il s'agit d'un code simple et autonome pour l'analyse des correspondances, comprenant une représentation simultanée de lignes et de colonnes.</p>
+ Encore une fois, le code pourrait être beaucoup plus compact, mais peut-être moins lisible.
+
+<p align="center"; style='font-size:14.0pt;font-family:"Courier New";color:red'><b>Commandes pour l'interface R</b></p> 
+<b> 
+<pre><FONT SIZE = 4><FONT COLOR=Blue>
+#-------------------------------------
+# Commandes à saisir dans l’interface R.
+# ------------------------------------------------- ---------------------
+# fonction Y = afcor (X): Analyse de correspondance de la matrice X
+# ------------------------------------------------- ---------------------
+# Exemple pour une table de contingence "tab.csv" dans le dossier ADT_R
+# (le code source: - afcor_E.r - se trouve dans le même dossier)</FONT>
+ source ("c: /ADT_R/afcor_E.r")<FONT COLOR=Blue> # emplacement du code source</FONT>
+ path = "c: /ADT_R/tab.csv"<FONT COLOR=Blue> # emplacement des données
+# chemin mène à un fichier Excel (c) [format csv]</FONT>
+ X = read.csv (path, row.names = 1, sep = ";")<FONT COLOR=Blue> # X = table de données</FONT>
+ Y = afcor (X)
+ plot_simult (Y) <FONT COLOR=Blue># tracé simultané de lignes et de colonnes de la table de données
+#----------------------------------------------------------------------</FONT>
+</pre>
+
+</b>
+<p>Le petit fichier de test de donn&eacute;es «tab.csv» est fourni dans le dossier ADT_R. C'est un tableau lexical simple (12 x 6) donnant les fr&eacute;quences de 12 mots (lignes) dans les r&eacute;ponses de six cat&eacute;gories de r&eacute;pondants. à la question suivante dans une enquête par sondage:<br/><i>
+«Personne ne peut expliquer pourquoi, peut-être à cause de ce qu'ils &eacute;voquent, nous trouvons certains mots agr&eacute;ables, d'autres d&eacute;sagr&eacute;ables.<br/>
+1. En ce qui vous concerne personnellement, quels sont les mots que vous trouvez les plus agr&eacute;ables? (Citez autant de mots que possible).<br/>
+2. Quels sont les mots que vous trouvez les plus d&eacute;sagr&eacute;ables? (Citez autant de mots que possible). "<br/></i>
+<br/>
+C'est un cas de "s&eacute;miom&eacute;trie ouverte" (sans liste de mots impos&eacute;e), cf. Chapitre 4 du livre d&eacute;jà cit&eacute;: <i>The Semiometric Challenge: Words, Lifestyles and Values</i>                                                        
+ &nbsp;&nbsp;(L. Lebart, J-F. Steiner, M. Piron, J. Wisdom), <i>L2C, 2014.</i>   
+         <a href="/doc/Semio_2014_format_169x244.pdf"><img id="tutoriel" src="fichiers/pdf.gif" border="0" height="15" width="13">(T&eacute;l&eacute;chargez le livre - pdf)&nbsp;&nbsp; </a>
+         <a href="/doc/Semio_2014_Cover_354x244.pdf"><img id="tutoriel" src="fichiers/pdf.gif" border="0" height="15" width="13">(T&eacute;l&eacute;chargez la couverture du livre  - pdf)&nbsp;&nbsp; </a>
+		 
+... et (en Français) <i>La s&eacute;miom&eacute;trie</i> (L. Lebart, M. Piron, J.-F. Steiner), <i>Dunod, 2003. </i> <a href="Semiometrie.html"><img id="tutoriel" src="fichiers/pdf.gif" border="0" height="15" width="13">(T&eacute;l&eacute;chargez le livre - pdf)&nbsp;&nbsp; </a>                 
+
+<hr align="center" size="2" width="30%">
+<p>
+<b>  
+<FONT SIZE = 4>
+<p align = "center">Petit tableau de donn&eacute;es - test ("tab.csv")</p>
+<pre>
+Ident    ;  Hm30;Hm55;Hp55;Fm30;Fm55; Fp55 
+argent   ;    11; 15;   6;  14;    9;    3 
+courage  ;     2;  3;  11;   1;    3;    4 
+dormir   ;     8;  3;   1;   6;    2;    0 
+livre    ;     2;  7;   1;   9;   11;   11 
+maman    ;     0;  3;   0;  12;   11;    3 
+manger   ;     9;  5;   1;  10;    3;    1 
+pardon   ;     1;  2;   6;   0;    5;    5 
+peinture ;     0;  0;   1;   2;    7;    3 
+plaisir  ;    10;  6;   2;  11;    2;    1 
+politesse;     0;  1;   5;   0;    4;    8 
+repas    ;     3;  5;   4;   0;    3;    1 
+soleil   ;    26; 32;  23;  54;   56;   42 
+
+<FONT COLOR=Green><u>Identifiants des colonnes (catégories de répondants):</u><i>
+Hm30 = Homme, moins de 30 ans; 
+Hm55 = Homme, entre 30 et 55 ans; 
+Hp55 = Homme, plus de 55 ans.
+Fm30 = Femme, moins de 30 ans; 
+Fm55 = Femme, entre 30 et 55 ans; 
+Fp55 = Femme, plus de 55 ans. </FONT></i>
+</FONT>
+</pre></span>
+  <hr align="center" size="2" width="100%">
+
+<p> L'image ci-dessous est produite par les fonctions <b>afcor()</b> et <b>plot_simult()</b>: </p>
+<p align = center><img src="image_PyR/image_CA.jpg" alt = "CA: plane (1,2)"/> </p>
+<p style='font-size:18px; text-align: center'><b> Image obtenue après avoir saisi les cinq lignes de commandes R </b></p>
+<hr size="3", width="100%", align="center">
+</b>
+<br/>
+<h3 id="A4"> </h3>
+<p align = "left"><a href = "#Top">
+<img src="image/return.gif" alt = "Top" width="30" height="20" border="1"/></a></p>
+
+
+<h2 align="center"> <span style='font-family:"Courier New"'> <FONT COLOR=Blue>4-<b> Calcul et tracé (sur un plan principal) de l'arbre de longueur minimale (ALM))</b></FONT></span></h2> 
+
+<p> Le langage de base R est à nouveau utilisé volontairement sans aucune bibliothèque spécialisée. Un choix devait être fait entre les nombreuses méthodes de clustering. Nous avons choisi d'implémenter ici l'arbre de longueur minimale (fonction armin()) en utilisant l'algorithme de Prim. Les fonctions print_armin et plot_armin donnent respectivement la liste des arêtes de l'arbre et une représentation de celle-ci dans un plan principal. L'arbre est calculé ici à partir des coordonnées principales résultant d'une analyse de correspondance (fonction afcor dans la section 3 ci-dessus). Avec ces coordonnées, la distance euclidienne habituelle correspond à la distance Chi-2 calculée sur les données initiales..<br/>
+Enfin, une petite fonction afcor_armin_plot (voir la fin du listing) fournit la séquence souhaitée. Elle est incluse dans le fichier armin.r, lui-même inclus dans le dossier intitulé ADT_R. Pour obtenir les résultats souhaités, écrivez simplement les lignes suivantes:
+</p>
+
+<p align="center"; style='font-size:14.0pt;font-family:"Courier New";color:red'><b>Commandes pour l'interface R </b></p> 
+<b> 
+<pre><FONT SIZE = 4><FONT COLOR=Blue>
+# -------------------------------------
+# Commandes à saisir dans l’interface R.
+# ------------------------------------------------- ---------------------
+# fonction composite Y = afcor_armin_plot (X) [dans le dossier téléchargé ADT_R]
+# ------------------------------------------------- ---------------------
+# Exemple pour une table de contingence "tab.csv" dans le dossier ADT_R
+# (les codes sources: afcor_E.r et armin_R.r se trouvant dans le même dossier ADR_r)</FONT>
+ source("c:/ADT_R/afcor_E.r")<FONT COLOR=Blue>    # emplacement du code source 1</FONT>
+ source("c:/ADT_R/armin_E.r"))<FONT COLOR=Blue>   # emplacement du code source 2</FONT>
+ path = "c:/ADT_R/tab.csv"<FONT COLOR=Blue>       # emplacement des données</FONT>
+<FONT COLOR=Blue># mêmes données que dans la section A3</FONT>
+ afcor_armin_plot(path) <FONT COLOR=Blue>  
+#----------------------------------------------------------------------</FONT>
+</pre>
+
+</b>
+<hr size="2", width="100%", align="center">
+
+<p> Le tableau ci-dessous est produit par la fonction <b>afcor_armin_plot()</b>: </p>
+</p>
+<p style='font-size:18px; text-align: center'><b> Tableau des arêtes de l'ALM obtenues après la saisie des quatre lignes de commande R ci-dessus. </b></p>
+
+
+<pre>
+    NumDeb   arête  NumFin    NomDeb   arête   NomFin    
+
+ [1,] 1      -----  9         argent   -----  plaisir   
+ [2,] 9      -----  6         plaisir  -----  manger    
+ [3,] 6      -----  3         manger   -----  dormir    
+ [4,] 1      -----  12        argent   -----  soleil    
+ [5,] 12     -----  4         soleil   -----  livre     
+ [6,] 4      -----  5         livre    -----  maman     
+ [7,] 1      -----  11        argent   -----  repas     
+ [8,] 4      -----  8         livre    -----  peinture  
+ [9,] 12     -----  7         soleil   -----  pardon    
+[10,] 7      -----  10        pardon   -----  politesse 
+
+<FONT COLOR=Green>NumDeb = <i>numéro d'origine; </i>NumFin = <i>num. extrémité</i>
+NomDeb <i>= Identificateur de l'origine; </i>NomFin = <i>Ident. extrémité</i></FONT>
+</pre>
+
+
+
+
+<hr size="2", width="100%", align="center">
+
+<p> L'image ci-dessous est l'image produite par la fonction <b>afcor_armin_plot()</b>: </p>
+<p align = center><img src="image_PyR/image_ALM.jpg" alt = "MST: plane (1,2)"/> </p>
+<p style='font-size:18px; text-align: center'><b> Image obtenue après la saisie des quatre lignes de commande R ci-dessus. </b></p>
+
+<hr size="2", width="100%", align="center">
+
+
+ 
+     <a href="index.html"><FONT SIZE = 4><b>Accueil</b></FONT> </a>
+ <div> 
+</body>
+</html>

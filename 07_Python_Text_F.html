@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0BKW2ZEJ8G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0BKW2ZEJ8G');
+</script>	
+		<title> Dtm-Vic / Lebart </title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" media="screen" type="text/css" title="Python" href="fichiers/python.css">
+
+    <meta name="keywords"
+          lang="fr"
+          content=
+          " Lebart Ludovic, analyse des données, statistiques textuelles, données textuelles, analyse multidimensionnelle de textes, Python,
+          linguistique quantitative, linguistique computationnelle, semiométrie, statistique descriptive multivariée, analyse de contiguïté, analyse des correspondances, logiciels statistiques, classification, clustering, analyse des correspondances multiples, cartes auto-organisées, cartes de Kohonen, Bootstrap, validation, évaluation, méthodologie d'enquête, dtm, dtmvic, dtm-vic"> 
+	</head>
+    <body>
+<!-- ========================================================-->		
+		<div id="corps">
+<h3 id="Top"> </h3>        
+    <a href="index.html"><b>Accueil</b> </a>
+    
+        <h2 align="center">Exemples de deux fonctions (textuelles) élémentaires en Python 3 basique</h2>
+        <h3 align="center">Calcul d'un tableau lexical (mots x texts) et d'une concordance</h3>
+ <h3 align="center">
+            <hr size="2"
+                width="100%"
+                align="center">
+                    <p><img src="image/fleche.gif"
+                         name="Image5"
+                         align="bottom"
+                         width="8"
+                         height="11"
+                         border="0"> <a href=
+                         "DEA/ADT_py.zip">
+                         Chargement du fichier compressé de codes et de données [dossier: "ADT_py"] </a></p>
+</h3>				
+
+  <hr size="2", width="100%", align="center">
+		   <p style='font-size:12px; color:maroon'> Les codes de ces deux fonctions et leurs contextes d'utilisation 
+		   constituent des exemples pédagogiques du livre <i> Analyse des Données Textuelles </i> (L. Lebart, B. Pincemin, C. Poudat), Presse de l'Université du Québec, 2019. </p>
+  <hr size="2", width="100%", align="center">
+
+<p >Le langage de programmation Python, dont la première version remonte à Guido van Rossum en 1989, est l'outil polyvalent attendu par les chercheurs travaillant sur des textes. Tout en étant facile d'accès, ce langage open source fournit une sorte de synthèse entre les langages de script tels que Perl et les langages orientés objet classiques tels que C ++ ou Java. L'utilisateur peut télécharger Python (et pour plus de confort, son interface IDLE) à l'adresse <a href= https://www.python.org/>https://www.python.org </a>   et apprendre de manière interactive en utilisant les boutons d'aide disponibles.</p>
+<p>Les programmes suivants supposent évidemment que le lecteur a une certaine connaissance des notions de base du langage. Celles-ci peuvent être acquises de manière interactive en consultant par exemple l’aide téléchargée avec Python (boutons: Aide, puis Didacticiel de l’interface IDLE), ou bien, à titre d'exemple, <a href= http://www-igm.univ-mlv.fr/~lecroq/mb1/python.pdf> Cours Python de Thierry Lecroq </a> .
+ </p>
+ <p> Les cartes de référence de base suivantes pourraient être utiles (comme résumé sommaire ) :<br /><br />
+Exemple 1 de carte de référence Python:<br />
+<a href= https://perso.limsi.fr/pointal/python:memento > Memento_Limsi</a> <br /><br />
+Exemple 2 de carte de référence Python:<br />
+ <a href=  https://www.cs.put.poznan.pl/csobaniec/software/python/py-qrc.html>Memento_Poznan</a> <br /><br />
+Une multitude de livres / manuels d'apprentissage de Python sont disponibles sur le Web.
+</p>
+</h2>
+            <hr size="2", width="100%", align="center">
+		<p align = "left"><a href = "#A1"><FONT COLOR=Maroon> 1-<b> Calcul et impression d'un tableau lexical (mots <FONT face = Calibri>X </FONT> textes)</b></FONT></a></p>
+		<p align = "left"><a href = "#A2"> <FONT COLOR=Maroon>2- <b> Calcul et impression d'une concordance à partir d'une série de textes</FONT></b></a>
+		</FONT></p>
+            <hr size="2", width="100%", align="center">
+
+				<ul>
+<!--hr size="2", width="100%", align="center"-->
+<h3 id="A1"> </h3>
+<p align = "left"><a href = "#Top">
+<img src="image/return.gif" alt = "Top" width="30" height="20" border="1"/></a></p>
+<h2 align="center"> <span style='font-family:"Courier New"'> <FONT COLOR=Blue>1-<b> Calcul et impression d'un tableau lexical (mots <FONT face = Calibri>X </FONT> textes)</b></FONT></span></h2> 
+
+<p>Il s'agit simplement de pénétrer, grâce au langage Python, dans la boîte noire d’une fonctionnalité banale disponible dans la plupart des logiciels statistiques d’analyse de texte.</p>
+ De toute évidence, le code pourrait être beaucoup plus compact, mais peut-être moins lisible. 
+
+<p align="center"; style='font-size:14.0pt;font-family:"Courier New";color:red'><b>Commandes pour l'interpréteur Python (IDLE par exemple)</p> <span style=font-size:12.0pt;font-family:"Courier New";color:'black'><pre><FONT COLOR=Blue>#-------------------------------------</FONT>
+ import os            <FONT COLOR=Blue> #  module os</FONT> 
+ os.chdir("c:/ADT_py")<FONT COLOR=Blue> # nom du dossier contenant programme et données 
+         # dans la racine"c:/" pour cet exemple</FONT> 
+ chemin = "poem.txt" <FONT COLOR=Blue>  # nom du fichier de textes (même dossier)</FONT> 
+ import table_lex_E  <FONT COLOR=Blue>  # programmes: table_lex_E.py 
+                       # (même dossier)</FONT> 
+ from table_lex_E  import * <FONT COLOR=Blue># fonctions d'importation 
+#-------------------------------------</FONT>
+ tablex(chemin, 2)  <FONT COLOR=Blue>   # exécute la fonction tablex()  
+                       # incluse dans le fichier: table_lex_E.py 
+# (avec: seuil = 2: valeur par défaut du seuil de fréquence).
+#-------------------------------------</FONT></li>  
+</pre>
+</span>
+</b>
+<p>Le petit fichier de test de données «poem.txt» est fourni dans le dossier ADT_py.<br />
+[Textes en format DtmVic : séparateurs de textes: “****” (début de ligne) suivis de 4 blancs et du titre du texte.
+ Fin de texte : “====”début de ligne)].<p>
+
+<pre>****    LAMARTINE   
+ voilà les feuilles sans sève,
+ qui tombent sur le gazon  
+ voilà le vent qui s'élève,
+ et gémit dans le vallon  
+ voilà l'errante hirondelle,
+ qui rase du bout de l'aile,  
+ l'eau dormante des marais...   
+ voilà l'enfant des chaumières, 
+ qui glane sur la bruyère, 
+ le bois tombé des forêts...        
+****    GAUTIER   
+ l'automne va finir, au milieu du ciel terne,     
+ dans un cercle blafard et livide que cerne  
+ un nuage plombe, le soleil dort. du fond  
+ des étangs remplis d'eau monte un brouillard qui fond   
+ collines, champs, hameaux dans une même teinte.   
+ sur les carreaux la pluie en larges gouttes tinte.     
+****    VERLAINE    
+ les sanglots longs      
+ des violons     
+ de l'automne    
+ blessent mon coeur      
+ d’une langueur      
+ monotone.   
+ tout suffocant      
+ et blême, quand      
+ sonne l'heure,      
+ je me souviens      
+ des jours anciens   
+ et je pleure.       
+****    BRUGNOT     
+ l'herbe se fane dans les près,  
+ les jours de soleil sont passés     
+ les feuilles jaunes et pourprées    
+ jonchent les sentiers effacés.  
+ le voilà donc mon bel automne.     
+****    BAUDELAIRE      
+ bientôt nous plongerons dans les froides ténèbres   
+ adieu, vive clarté de nos étés trop courts.  
+ j'entends déjà tomber avec des chocs funèbres   
+ le bois retentissant sur le pavé des cours.    
+=====
+</pre>
+
+<p>Ce mini-corpus est uniquement destiné à vérifier le bon fonctionnement du code. Le même code fournira la table lexicale du corpus ÉTAT DE L'UNION (corpus environ 2000 fois plus grand) en quelques secondes (dans ce dernier cas, il est prudent de commencer avec un seuil de fréquence minimum de 200 pour les mots). Le tableau ci-dessous est l'image du fichier "tablexfile.txt" produit par la fonction tablex ().</p>
+<pre><p style='font-size:18px; color:red; text-align: center'> <b>Table lexicale croisant  mots et poèmes </b></p> 
+         LAMARTI GAUTIER VERLAIN BRUGNOT BAUDELA 
+
+ automne       0       1       1       1       0 
+    bois       1       0       0       0       1 
+       d       0       1       1       0       0 
+    dans       1       2       0       1       1 
+      de       1       0       1       1       1 
+     des       3       1       2       0       2 
+      du       1       2       0       0       0 
+     eau       1       1       0       0       0 
+      et       1       1       2       1       0 
+feuilles       1       0       0       1       0 
+    fond       0       2       0       0       0 
+      je       0       0       2       0       0 
+   jours       0       0       1       1       0 
+       l       4       1       2       1       0 
+      la       1       1       0       0       0 
+      le       4       1       0       1       2 
+     les       1       1       1       4       1 
+     mon       0       0       1       1       0 
+     qui       4       1       0       0       0 
+  soleil       0       1       0       1       0 
+     sur       2       1       0       0       1 
+      un       0       3       0       0       0 
+     une       0       1       1       0       0 
+   voilà       4       0       0       1       0
+</pre>
+
+
+<hr size="2", width="100%", align="center">
+<h3 id="A2"> </h3>
+<p align = "left"><a href = "#Top">
+<img src="image/return.gif" alt = "Top" width="30" height="20" border="1"/></a></p>
+<h2 align="center"> <span style='font-family:"Courier New"'> <FONT COLOR=Blue>2- Calcul et impression d'une concordance à partir d'une série de textes.</FONT></span></h2> 
+
+<hr size="2", width="100%", align="center">
+
+<p align="center"; style='font-size:14.0pt;font-family:"Courier New";color:red'><b>Commandes pour l'interpréteur Python (IDLE par exemple)</b></p> 
+<b> <span style=font-size:12.0pt;font-family:"Courier New";color:'black'> 
+<pre><FONT COLOR=Blue>#-------------------------------------</FONT> 
+import os           <FONT COLOR=Blue>      # module  os </FONT>
+os.chdir("c:/ADT_py")    <FONT COLOR=Blue> # nom du dossier contenant programme et données 
+         # dans la racine"c:/" pour cet exemple</FONT>
+chemin = " SOTU_40_08.txt "<FONT COLOR=Blue> # nom du fichier de textes (même dossier)
+    # (discours: STATE OF THE UNION des présidents 41 à 44)</FONT>
+import concord_E      <FONT COLOR=Blue>     # fichier-programme: concord_E.py (même dossier)</FONT>
+from concord_E  import *  <FONT COLOR=Blue> # appel des fonctions de concord_E.py
+#-------------------------------------</FONT>
+cible = “dream”       <FONT COLOR=Blue>   #  cible = le mot "dream"</FONT>
+conco (chemin, cible)    <FONT COLOR=Blue> # exécute la fonction  conco()  incluse dans : concord_E.py
+#-------------------------------------</FONT>
+<hr size="2", width="100%", align="center">
+</pre>Le tableau ci-dessous est l'image du fichier "concordance.txt" produit par la fonction conco ().<br /> Tableau de sortie (extrait: 4 derniers présidents jusqu’en 2008) des résultats de la cible «dream» du corpus STATE OF THE UNION.
+<p style='font-size:18px; color:red; text-align: center'> <b>Table de concordance [KWIC] pour le mot "dream" </b></p><pre><FONT SIZE = 2>
+**** -----------    41BUSH   
+17825                    families achieve the     dream of home ownership. but make no
+17898  your  living rooms, hold fast  to your     dreams because  ultimately America's
+17942  t century. our nation is  the   enduring   dream of every  immigrant
+17961  he future we can make for ourselves. but   dreams alone won't
+18095  uture, every kid  is the same:   full of   dreams,  ready to take  on the world
+18104  on on a new century, your century,  on     dreams we cannot see, on the destiny
+18324                              have the bad   dreams  children   once had in decad
+18408      real estate. for those Americans who   dream of buying a first
+**** -----------    42CLINTON 
+18569    enter it having  secured the American    dream for ourselves  and for future
+18620                       billion to make the   dream  of enterprise zones real, we 
+18897  ation,  and a fair shot  at the American   dream,  they will do extraordinary  
+18904                   working, the   American   dream has been slipping away. in 199
+19286   on  a mission: to restore the  American   dream for all our  people and to mak
+19494  n entrepreneurs are  living the American   dream. if  we want it to stay  that 
+19714   promise of this country,   the enduring   dream from  that first and most-sacr
+19734  ions: first, how do we make the American   dream of opportunity for all a reali
+19768                            our individual   dreams  must be  realized by  our co
+19961                       resources, and even   dreams. bosnia and we stood up for p
+20204  ll cultures.  this will no   longer be a   dream, but a necessity. and over
+20672  me   here to work for their own American   dreams. let's keep  our cities going
+21129                 union   of our  founders'   dreams.  we are  now, at  the end  o
+21144  he more  perfect union of  our founders'   dreams.
+21167  nt, America again has the confidence to    dream   big dreams. but we  must not
+21168    complacency. we will be  judged by the   dreams  and   deeds we pass on to ou
+21231   their test scores. to make the American   dream achievable for all, we must ma
+21532  we remain  a new nation. as  long as our   dreams  outweigh our memories,
+**** -----------    43BUSH  
+21683  d in the way of families achieving their   dreams. the surplus is not the
+22540             not punish,  the efforts  and   dreams  of   entrepreneurs. small bu
+22769  we live in the country where the biggest   dreams are born.
+22770       the abolition of slavery was only a   dream  until   it was fulfilled. the
+22771  fall of  imperial   communism was only a   dream until, one day, it was  accomp
+22772                        our generation has   dreams of its own, and we  also go  
+22776   founding ideals and carried  on a noble   dream. tonight we are  comforted by 
+22797  dom's cause. far from   being a hopeless   dream, the  advance of freedom
+23027   raise their sights  and achieve   their   dreams. a hopeful society comes to t
+23196  blood  and bodies to put an end  to your   dreams,   and what is coming is even
+23397  ountry, there   are boys and girls with    dreams and a decent education
+**** -----------    44OBAMA 
+23645                            you built your   dreams upon that’s now hanging by a 
+23902  he most power or celebrity, but from the   dreams and  aspirations of
+24004  when an entrepreneur takes a chance on a   dream, or a worker decides its time 
+24273  ertain; to do what  it took to keep the    dream of this nation alive for their
+24286   this moment to start anew, to carry the   dream forward,
+</FONT></pre>
+<hr size="2", width="100%", align="center">
+
+
+
+
+
+ 
+      <a href="index.html"><b>Accueil</b> </a>
+
+
+ <div> 
+</body>
+</html>

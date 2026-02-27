@@ -1,0 +1,247 @@
+/* Feuille de style */
+
+/* Styles body, a */
+
+body
+{
+    width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	
+	background-color: #303D58;
+/*	background-color: #334499; */
+	font-family: Arial, "Times New Roman", Times, sans-serif;
+}
+
+a
+{
+	color: #303D58;
+	text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+
+/* Styles de l'en-tête */
+#en_tete
+{
+/*    width: 910px;  */
+    height: 190px;
+	margin-top: 0px;
+/*	border: 2px dotted #3333FF;	*/
+	border: 2px #3333FF;	
+    background:#DDDDDD; 
+/*     background:#204030; */
+    font-size: 10px;
+    padding: 2px;
+    color:#000000;
+
+}
+
+/* Styles des menus */
+
+#menu
+{
+	width: 20%;
+	float: left;
+	font-size: 10px;
+}
+
+.sous_menu
+{
+	margin-top: 10px;
+	margin-left: 4%;	
+	background-color: #DDDDDD;
+	color: #643232;
+	border: 2px; 	
+}
+.sous_menu img
+{
+padding: 2px;
+}
+.sous_menu h3
+{
+	color: #643232;
+	text-align: center;
+}
+
+/* menu English*/
+
+
+#menuE
+{
+	width: 20%;
+	float: left;
+	font-size: 10px;
+
+}
+
+.sous_menuE
+{
+	margin-top: 10px;
+/* new */	
+	margin-left: 4%;
+/*	padding: 10px;	*/
+/*end new */	
+	background-color: #CCFFFF;
+	color: #000080;
+	border: 2px;	
+}
+.sous_menuE img
+{
+padding: 2px;
+}
+.sous_menuE h3
+{
+	color: #000080;
+	text-align: center;
+}
+
+/* menu Castillan */
+
+#menuES
+{
+	width: 20%;
+	float: left;
+	font-size: 10px;
+}
+
+.sous_menuES
+{
+/* new*/
+	margin-left: 4%;
+/* end new */	
+	margin-top: 10px;
+	background-color: #FFFFCC;
+	color: #006600; 
+	
+	border: 2px;	
+}
+.sous_menuES img
+{
+padding: 2px;
+}
+.sous_menuES h3
+{
+		color: #003300; 
+	text-align: center;
+}
+/* Style Portugais */
+#menuP
+{
+	width: 20%;
+	float: left;
+	font-size: 10px;
+}
+
+.sous_menuP
+{
+	margin-top: 10px;
+	margin-left: 4%;
+
+	background-color: rgb(210,255,210);
+        color: #643232;
+	border: 2px;	
+}
+.sous_menuP img
+{
+padding: 2px;
+}
+.sous_menuP h3
+{
+		color: #003300; 
+	text-align: center;
+}
+/* Italien */
+#menuI
+{
+	width: 20%;
+	float: left;
+	font-size: 10px;
+
+}
+
+.sous_menuI
+{
+	margin-top: 10px;
+	margin-left: 4%;
+	background-color:#FFDDAA;
+		color: #990033; 
+	
+	border:2px;	
+}
+.sous_menuI img
+{
+padding: 2px;
+}
+.sous_menuI h3
+{
+		color: #990033; 
+	text-align: center;
+}
+
+
+
+
+/* Styles du corps */
+
+#corps
+{
+	margin-left: 22%;
+	margin-top: 20px;
+	padding: 10px;	
+/*	border: 2px dotted #3333FF;	*/
+	border: 2px #3333FF;	
+	color: #000000;
+	background-color: #DDDDDD;	
+	text-align: justify;
+    font-size: 10px;
+}
+
+#corps h2
+{
+	text-align: center;
+	color: #643232;
+}
+#corps h3
+{
+	color: #643232;
+}
+
+.publi_art
+{
+    font-size: 12px;
+}
+
+#corps_Front
+{
+	margin-left: 91%;
+	margin-top: 20px;
+	padding: 10px;	
+/*	border: 2px dotted #3333FF;	*/
+	border: 2px #3333FF;	
+	color: #000000;
+     background:#204030; 
+/*     background:#101020; */
+	text-align: justify;
+    font-size: 14px;
+}
+/* Styles du pied de page */
+
+#pied_de_page_Front
+{
+    background: #DDDDDD; 
+	clear: left;
+	margin-top: 10px;
+	padding: 2px;
+/*	background-color: #DDDDDD;*/
+/*    background:#DDDDDD; */	
+	color: #000000;
+	text-align: center;
+	border: 2px #3333FF;	
+
+}

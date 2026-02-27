@@ -1,0 +1,149 @@
+Examples of two elementary functions in Python
+ Loading the compressed file of codes and data [folder:"ADT_py"]
+ Los códigos de estas cuatro funciones y sus contextos de uso son ejemplos pedagógicos del libro <i> Analyze des Données textuelles </i> [Análisis de datos textuales] (L. Lebart, B. Pincemin, C. Poudat), Presses of l'Université du Québec [en francés], 2019, en prensa.
+The Python programming language, whose first version dates back to Guido van Rossum in 1989, is the versatile tool expected by researchers who are working on texts. While being easy to access, this open source language provides a kind of synthesis between script languages ​​such as Perl and classical object-oriented languages ​​such as C ++ or Java. The user can download Python (and for more comfort its IDLE interface) from https://www.python.org and learn interactively using the help buttons available.
+The following programs obviously assume that the reader has some knowledge of the basic notions of language. These can be acquired interactively by consulting the Help downloaded with Python (buttons: Help, then Tutorial of the IDLE interface).
+The following basic reference cards could be useful (as a terse summary) for beginners:
+Example 1 of Python memento card:
+Example 2 of Python memento card:
+A wealth of books / manuals for learning Python are available on the web.
+1- Computation and printing of a lexical table (words X texts)
+2- Computation and printing of a concordance from a series of texts
+ 
+1- Computation and printing of a lexical table (words X texts) from a series of texts.
+This is simply to penetrate, thanks to the Python language, in the black box of a commonplace functionality available in most statistical software of text analysis.
+
+Evidently, the code could be much more compact, but perhaps less readable.
+Commands for the Python interpreter (IDLE for example)
+The small data-test file “poem.txt” is provided in the folder ADT_py.
+[Texts in DtmVic format: separators of texts: “****” (beginning of line) followed by 4 blank spaces and text titles. End of text: “====”(beginning of line)].
+
+This mini-corpus is only intended to verify the proper functioning of the code. The same code will provide the lexical table of the STATE OF THE UNION corpus (corpus about 2000 times larger) in seconds (in the latter case, it is prudent to start with a minimum frequency threshold of 200 for words). The table below is the image of the "tablexfile.txt" file produced by the function tablex().
+ Lexical table crosstabulating Words and Poems 
+
+2- Computation and printing of a concordance from a series of texts.
+Commands for the Python interpreter (IDLE for example)
+
+ 
+#------------------------------------- 
+import os                     #  os module
+os.chdir("c:/ADT_py")         # designates the folder containing program and data/
+chemin = " SOTU_40_08.txt "   # name of text file (same folder)
+    # (discourses: STATE OF THE UNION from 1940 to 2008)
+import concord_E                  # program file: concord_E.py (same folder)
+from concord_E  import *          # call of functions in concord_E.py
+#-------------------------------------
+cible = “dream”                  #  “cible” means “target word”
+conco (chemin, cible)             # executing function  conco  included in the file: concord_E.py
+#-------------------------------------
+
+The table below is the image of the "concordance.txt" file produced by the function conco().
+Output table (excerpt: 4 last presidents up to 2008) of results for pivot « dream » in the corpus STATE OF THE UNION.
+Concordance table [KWIC] for the word "dream"
+**************************************************************
+Exemples de deux fonctions élémentaires en Python
+ Chargement du fichier compressé de codes et de données [dossier: "ADT_py"]
+Le langage de programmation Python, dont la première version remonte à Guido van Rossum en 1989, est l'outil polyvalent attendu par les chercheurs travaillant sur des textes. Tout en étant facile d'accès, ce langage open source fournit une sorte de synthèse entre les langages de script tels que Perl et les langages orientés objet classiques tels que C ++ ou Java. L'utilisateur peut télécharger Python (et pour plus de confort, son interface IDLE) à l'adresse https://www.python.org et apprendre de manière interactive en utilisant les boutons d'aide disponibles.
+Les programmes suivants supposent évidemment que le lecteur a une certaine connaissance des notions de base du langage. Celles-ci peuvent être acquises de manière interactive en consultant l’Aide téléchargée avec Python (boutons: Aide, puis Didacticiel de l’interface IDLE).
+Les cartes de référence de base suivantes pourraient être utiles (comme résumé sommaire) pour les débutants:
+Exemple 1 de carte de référence Python:
+Exemple 2 de carte de référence Python:
+Une multitude de livres / manuels d'apprentissage de Python sont disponibles sur le Web.
+1- Calcul et impression d'un tableau lexical (mots X textes)
+2- Calcul et impression d'une concordance à partir d'une série de textes
+ 
+1- Calcul et impression d'un tableau lexical (mots X textes) à partir d'une série de textes.
+C’est simplement pour pénétrer, grâce au langage Python, dans la boîte noire d’une fonctionnalité banale disponible dans la plupart des logiciels statistiques d’analyse de texte.
+
+De toute évidence, le code pourrait être beaucoup plus compact, mais peut-être moins lisible.
+Commandes pour l'interpréteur Python (IDLE par exemple)
+Le petit fichier de test de données «poem.txt» est fourni dans le dossier ADT_py.
+[Textes au format DtmVic: séparateurs de textes: “****” (début de ligne) suivi de 4 espaces et titres de texte. Fin du texte: “====” (début de ligne)].
+
+Ce mini-corpus est uniquement destiné à vérifier le bon fonctionnement du code. Le même code fournira la table lexicale du corpus ÉTAT DE L'UNION (corpus environ 2000 fois plus grand) en secondes (dans ce dernier cas, il est prudent de commencer avec un seuil de fréquence minimum de 200 pour les mots). Le tableau ci-dessous est l'image du fichier "tablexfile.txt" produit par la fonction tablex ().
+ Table lexicale croisant des mots et des poèmes
+2- Calcul et impression d'une concordance à partir d'une série de textes.
+Commandes pour l'interpréteur Python (IDLE par exemple)
+
+ 
+# -------------------------------------
+module import os # os
+os.chdir ("c: / ADT_py") # désigne le dossier contenant le programme et les données /
+chemin = "SOTU_40_08.txt" # nom du fichier texte (même dossier)
+    # (discours: ÉTAT DE L'UNION de 1940 à 2008)
+importer le fichier programme concord_E #: concord_E.py (même dossier)
+depuis concord_E import * # appel de fonctions dans concord_E.py
+# -------------------------------------
+cible = “dream” # “cible” signifie “mot cible”
+conco (chemin, cible) # fonction d'exécution conco incluse dans le fichier: concord_E.py
+# -------------------------------------
+
+Le tableau ci-dessous est l'image du fichier "concordance.txt" produit par la fonction conco ().
+Tableau de sortie (extrait: 4 derniers présidents jusqu’en 2008) des résultats du pivot «dream» du corpus STATE OF THE UNION.
+Table de concordance [KWIC] pour le mot "rêve"
+************************************************************
+
+
+
+Ejemplos de dos funciones elementales en Python
+ Cargando el archivo comprimido de códigos y datos [carpeta: "ADT_py"]
+ 
+ 
+Los códigos de estas cuatro funciones y sus contextos de uso son ejemplos pedagógicos del libro <i> Analyze des Données textuelles </i> [Análisis de datos textuales] (L. Lebart, B. Pincemin, C. Poudat), Presses of l'Université du Québec [en francés], 2019, en prensa.
+ 
+El lenguaje de programación Python, cuya primera versión se remonta a Guido van Rossum en 1989, es la herramienta versátil que esperan los investigadores que trabajan en textos. Aunque es fácil de acceder, este lenguaje de código abierto proporciona una especie de síntesis entre lenguajes de script como Perl y lenguajes clásicos orientados a objetos como C ++ o Java. El usuario puede descargar Python (y para mayor comodidad su interfaz IDLE) desde https://www.python.org y aprender de forma interactiva utilizando los botones de ayuda disponibles.
+Los siguientes programas obviamente asumen que el lector tiene algún conocimiento de las nociones básicas del lenguaje. Estos pueden adquirirse interactivamente consultando la Ayuda descargada con Python (botones: Ayuda, luego Tutorial de la interfaz IDLE).
+Las siguientes tarjetas de referencia básicas podrían ser útiles (como resumen conciso) para los principiantes:
+Ejemplo 1 de la tarjeta de recuerdo Python:
+Ejemplo 2 de la tarjeta de recuerdo Python:
+Una gran cantidad de libros / manuales para aprender Python están disponibles en la web.
+1- Cálculo e impresión de una tabla léxica (palabras X textos)
+2- Cálculo e impresión de una concordancia a partir de una serie de textos.
+ 
+1- Cálculo e impresión de una tabla léxica (palabras X textos) a partir de una serie de textos.
+Esto es simplemente para penetrar, gracias al lenguaje Python, en la caja negra de una funcionalidad común disponible en la mayoría de los programas estadísticos de análisis de texto.
+
+Evidentemente, el código podría ser mucho más compacto, pero quizás menos legible.
+Comandos para el intérprete de Python (IDLE por ejemplo)
+
+import os <FONT COLOR = Blue> # os module </FONT>
+ os.chdir ("c: / ADT_py") <FONT COLOR = Blue> # nombre de la carpeta que contiene
+         # programa y datos, en la raíz "c: /" en este ejemplo </FONT>
+ chemin = "poem.txt" <FONT COLOR = Blue> # nombre del archivo de texto (misma carpeta) </FONT>
+ importar table_lex_E <FONT COLOR = Blue> # archivo de programa: table_lex_E.py
+                       # (misma carpeta) </FONT>
+ from table_lex_E import * <FONT COLOR = Blue> # funciones de importación
+# ------------------------------------- </FONT>
+ tablex (chemin, 2) <FONT COLOR = Blue> # ejecutando la función tablex incluida
+                       # en el archivo descargado: table_lex_E.py
+# (con: seuil = 2: valor predeterminado para el umbral de frecuencia).
+
+
+
+
+
+El pequeño archivo de prueba de datos "poem.txt" se proporciona en la carpeta ADT_py.
+[Textos en formato DtmVic: separadores de textos: “****” (principio de línea) seguidos de 4 espacios en blanco y títulos de texto. Fin del texto: “====” (principio de línea)].
+
+Este mini-corpus solo está destinado a verificar el correcto funcionamiento del código. El mismo código proporcionará la tabla léxica del cuerpo ESTADO DE LA UNIÓN (cuerpo aproximadamente 2000 veces más grande) en segundos (en este último caso, es prudente comenzar con un umbral de frecuencia mínimo de 200 palabras). La siguiente tabla es la imagen del archivo "tablexfile.txt" producido por la función tablex ().
+ Tabla léxica crosstabulating palabras y poemas
+ 
+ 2- Cálculo e impresión de una concordancia a partir de una serie de textos.
+Comandos para el intérprete de Python (IDLE por ejemplo)
+
+ 
+# -------------------------------------
+importar os # os modulo
+os.chdir ("c: / ADT_py") # designa la carpeta que contiene el programa y los datos /
+chemin = "SOTU_40_08.txt" # nombre del archivo de texto (la misma carpeta)
+    # (discursos: ESTADO DE LA UNIÓN desde 1940 hasta 2008)
+importar concord_E # archivo de programa: concord_E.py (misma carpeta)
+desde concord_E import * # call de funciones en concord_E.py
+# -------------------------------------
+cible = "sueño" # "cible" significa "palabra objetivo"
+conco (chemin, cible) # ejecutando la función conco incluida en el archivo: concord_E.py
+# -------------------------------------
+
+La siguiente tabla es la imagen del archivo "concordance.txt" producido por la función conco ().
+Tabla de salida (extracto: 4 últimos presidentes hasta 2008) de los resultados del pivote «sueño» en el cuerpo ESTADO DE LA UNIÓN.
+Tabla de concordancia [KWIC] para la palabra "sueño"

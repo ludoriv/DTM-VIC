@@ -1,0 +1,82 @@
+/* Feuille de style */
+
+/* Styles body, a */
+
+body
+{
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	
+	background-color: ##CCFFFF;
+	font-family:  "Times New Roman", Arial, Times, sans-serif;
+}
+
+a
+{
+	color: #000099;
+	text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+
+
+
+/* Styles du corps */
+
+#corps
+{
+	background-color: #CCFFFF;
+	/*margin-top: 20px; */ 
+	padding: 10px; 	
+	/*border: 2px dotted #3333FF;*/	
+	color: #000000;
+	text-align: justify;
+    font-size: 16px;
+}
+#corps h1
+{
+	text-align: center;
+	color: #643232;
+}
+#corps h2
+{
+	text-align: center;
+	color: #643232;
+}
+#corps h3
+{
+	color: #643232;
+}
+
+.publi_art
+{
+    font-size: 12px;
+}
+
+.center
+{ 
+    text-align: center;
+}
+
+/* Styles du pied de page */
+
+#pied_de_page
+{
+	clear: left;
+	margin-top: 30px;
+	padding: 5px;
+	font-style: italic;
+	background-color: #DDDDDD;	
+	color: #000000;
+	text-align: center;
+	border: 2px dotted #3333FF;	
+/*	border: 2px solid #3333FF;*/	
+
+}
