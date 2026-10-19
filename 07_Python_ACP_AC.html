@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0BKW2ZEJ8G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0BKW2ZEJ8G');
+</script>	
+		<title> Dtm-Vic / Lebart </title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" media="screen" type="text/css" title="Python" href="fichiers/python.css">
+
+    <meta name="keywords"
+          lang="fr"
+          content=
+          " Lebart Ludovic, analyse des données, analyse multidimensionnelle, Python,
+           semiométrie, analyse en composantes principales, logiciels statistiques, classification, clustering, dtm, dtmvic, dtm-vic"> 
+	</head>
+    <body>
+<!-- ========================================================-->		
+		<div id="corps">
+<h3 id="Top"> </h3>        
+    <a href="index.html"><b>Accueil</b> </a>
+        <h1 align="center">Analyse en composantes principales et Analyse des correspondances avec Python</h1>
+ <hr size="3"  width="100%"  align="center">
+        <h2 align="center">1) Analyse en composantes principales avec Python</h2>
+        <h3 align="center"> Mise en oeuvre à partir de deux exemples</h3>
+
+ <hr size="1"  width="100%"  align="center">
+ <p align="center">
+    <i><font size= 3 color="Maroon">Dossier à télécharger pour obtenir les fichiers codes et données </font>
+	</i>
+</p>        
+		
+ <h3 align="center">
+
+ <p><img src="image/fleche.gif"  name="Image5" align="bottom" width="8" height="11" border="0"> <a href= "DEA/ACP_py.zip"> Chargement du fichier compressé de codes et de données [dossier: "ACP_py"] </a></p>
+</h3>				
+<hr align="center" size="1" width="100%">        
+
+<p >Le programme complet d’analyse en composantes principales (ACP) présenté ici est conçu dans l’esprit de l’analyse exploratoire des données. On insiste ainsi sur le rôle fondamental, pour les interprétations, des variables supplémentaires (numériques ou nominales) et des individus supplémentaires.</p>
+<p>Ce programme autonome ne se réfère pas à des programmes d’ACP existants. Il n’utilise que les trois bibliothèques python classiques NUMPY (pour le calcul vectoriel et matriciel), PANDAS (pour la gestion des tableaux de données) et MATPLOTLIB (pour les graphiques).</p>
+<p>
+<hr size="1", width="100%", align="center">
+Voici un échantillon de références de sites développant l'analyse en composantes principales.<br /> 
+<a href="
+https://towardsdatascience.com/principal-component-analysis-pca-from-scratch-in-python-7f3e2a54">
+https://towardsdatascience.com/principal-component-analysis-pca-from-scratch-in-python-7f3e2a54 </a><br />
+<a href="
+https://medium.com/swlh/principal-component-analysis-from-scratch-in-python-2f139c6420c9">
+https://medium.com/swlh/principal-component-analysis-from-scratch-in-python-2f139c6420c9</a><br />
+<a href="
+https://www.datacamp.com/community/tutorials/principal-component-analysis-in-python">
+https://www.datacamp.com/community/tutorials/principal-component-analysis-in-python</a><br />
+<a href="
+http://tutoriels-data-mining.blogspot.com/p/acp.html">
+http://tutoriels-data-mining.blogspot.com/p/acp.html</a><br />
+<a href="
+http://eric.univ-lyon2.fr/~ricco/tanagra/fichiers/fr_Tanagra_ACP_Python.pdf">
+http://eric.univ-lyon2.fr/~ricco/tanagra/fichiers/fr_Tanagra_ACP_Python.pdf</a><br />
+             (ce dernier est le plus proche de l’esprit « Analyse des Données »)<br />
+<hr size="1", width="100%", align="center">
+
+
+</p>
+<h3><font color="Maroon">&nbsp;&nbsp;ACP: Deux exemples et code commenté</font></h3>
+<p></p>
+<p>Les fichiers d’exemples sont des fichiers de données sémiométriques (notes de 1 à 7 données à des mots par des individus selon que ces mots sont désagréables ou agréables). Dans les exemples en vraies grandeurs, il y a 210 mots et parfois plusieurs milliers d’individus. 
+ Les ouvrages relatifs à la sémiométrie sont en libre chargement sur ce site.
+ </p>
+<p align="center"> 
+<!--hr size="1"  width="100%"  align="center"-->
+ <p align="center">
+    <i><font size= 3 color="Maroon">Cliquez ci-dessous pour obtenir la présentation de l'ACP à partir de deux exemples </font>
+	</i>
+</p>        
+        <h2 align="center">
+         <a href="doc/acomp_dtm_py_F.pdf"><img id="tutoriel" src="fichiers/pdf.gif" border="0" height="15" width="13">
+		 ACP: Présentation à partir de deux exemples, et code commenté&nbsp;&nbsp; </a>  </h2>
+</h2>
+ 
+ <!-- Addition of CA after ACP) (26_08_2026)-->
+ <hr size="3"  width="100%"  align="center">
+ 
+ <!-- ========================================================-->		
+		<!--div id="corps"-->
+<h3 id="Top"> </h3>        
+     
+        <h2 align="center">2) Analyse des correspondances (AC) avec Python</h2>
+        <h3 align="center">Mise en oeuvre à partir d'un exemple</h3>
+
+ <hr size="1"  width="100%"  align="center">
+ <p align="center">
+    <i><font size= 3 color="Maroon">Dossier à télécharger pour obtenir les fichiers codes et données </font>
+	</i>
+</p>        
+		
+ <h3 align="center">
+
+ <p><img src="image/fleche.gif"  name="Image5" align="bottom" width="8" height="11" border="0"> <a href= "DEA/AC_py.zip"> Chargement du fichier compressé de codes et de données [dossier: "AC_py"] </a></p>
+</h3>				
+<hr align="center" size="1" width="100%">        
+
+<p >Le programme complet d’analyse des correspondances (ACP) présenté ici est conçu dans l’esprit de l’analyse exploratoire des données. On insiste ainsi sur le rôle fondamental, pour les interprétations, des lignes (variables) supplémentaires et des colonnes (individus) supplémentaires.</p>
+<p>Ce programme autonome ne se réfère pas à des programmes d’AC existants. Comme cela a été le cas pour l'analyse en composantes principales, ce programme n’utilise que les trois bibliothèques python classiques NUMPY (pour le calcul vectoriel et matriciel), PANDAS (pour la gestion des tableaux de données) et MATPLOTLIB (pour les graphiques).</p>
+<p>
+<hr size="1", width="100%", align="center">
+
+
+</p>
+<h3 align="center"><font color="Maroon">&nbsp;&nbsp;AC: Un exemple et listage du code commenté</font></h3>
+<p></p>
+<p>Le petit fichier d’exemples est une table de contingence (ou de fréquence) déjà utilisée au chapitre 3 de l'ouvrage "Statistique textuelle" (Ludovic Lebart et André Salem, Dunod, 1994, pour la première édition). Vous pouvez accéder directement au chapitre 3 de ce livre en cliquant sur : 
+<a href ="doc/ST.chap_3.pdf"> Statistique Textuelle, chapitre 3 </a>. </p>
+<p>
+(Le livre entier est librement téléchargeable sur : <a href ="ST.html"> Statistique Textuelle </a>).
+
+ </p>
+<p align="center"> 
+<hr size="1"  width="100%"  align="center">
+ <p align="center">
+    <i><font size= 3 color="Maroon">Cliquez ci-dessous pour obtenir la présentation de l'AC à partir d'un exemple </font>
+	</i>
+</p>        
+        <h2 align="center">
+         <a href="doc/ac_dtm_py_F.pdf"><img id="tutoriel" src="fichiers/pdf.gif" border="0" height="15" width="13">
+		 AC: Présentation à partir d'un exemple, et code python commenté&nbsp;&nbsp; </a>  </h2>
+</h2>
+<hr size="2", width="100%", align="center">
+
+<br/><br/> 
+      <a href="index.html"><b>Accueil</b> </a>
+
+  
+ <br/><br/><br/>
+  
+		<div id="pied_de_page">
+			<p>  &nbsp;  </p>
+			
+		</div>
+ 
+</body>
+</html>
